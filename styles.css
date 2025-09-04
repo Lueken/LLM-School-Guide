@@ -1,0 +1,297 @@
+/* Custom CSS for AI Platform Guide */
+
+/* Navigation Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    min-width: 200px;
+    z-index: 1000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    display: none;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Keep dropdown visible when hovering over it */
+.dropdown-content:hover {
+    display: block;
+}
+
+/* Role Tab Styles */
+.role-tab {
+    transition: all 0.3s ease;
+}
+
+.role-tab.active {
+    border-bottom: 3px solid #2563eb;
+}
+
+/* Highlight for search results */
+.highlight {
+    background-color: yellow;
+    padding: 2px;
+}
+
+/* Print styles */
+@media print {
+    nav, footer, .no-print {
+        display: none !important;
+    }
+
+    .print-break {
+        page-break-before: always;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Collapsible section animation */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.collapsible-content.expanded {
+    max-height: 2000px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Card hover effects */
+.platform-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Copy button styles */
+.copy-button {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.copy-button:active {
+    transform: scale(0.95);
+}
+
+/* Template box styles */
+.template-box {
+    background-color: #f9fafb;
+    border-left: 4px solid #2563eb;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Success message animation */
+.success-message {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .role-tabs {
+        flex-direction: column;
+    }
+
+    .role-tab {
+        width: 100%;
+        text-align: center;
+    }
+
+    .platform-comparison-table {
+        overflow-x: auto;
+    }
+}
+
+/* Accordion styles */
+.accordion-header {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f3f4f6;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon.rotate-90 {
+    transform: rotate(90deg);
+}
+
+/* Step indicator styles */
+.step-indicator {
+    position: relative;
+}
+
+.step-indicator::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    width: 2px;
+    height: 20px;
+    background-color: #d1d5db;
+}
+
+.step-indicator:last-child::after {
+    display: none;
+}
+
+/* Progress bar */
+.progress-bar {
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background-color: #2563eb;
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* Badge styles */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-free {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-paid {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-enterprise {
+    background-color: #ede9fe;
+    color: #5b21b6;
+}
+
+/* Sticky sidebar for navigation */
+.sticky-sidebar {
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2563eb;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
