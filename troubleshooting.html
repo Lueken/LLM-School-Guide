@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-blue-600 font-semibold px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Troubleshooting</a>
+        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-red-600 to-orange-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Troubleshooting & Support</h1>
+        <p class="text-xl">Solutions for common issues across all AI platforms</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Platform-Specific Issues -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Platform-Specific Issues</h2>
+
+        <!-- Claude Issues -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-purple-600">When Claude Seems Confused</h3>
+            <div class="bg-purple-50 rounded-lg p-4 mb-4">
+                <p class="font-semibold mb-2">School Scenario:</p>
+                <p class="text-gray-700">"I asked Claude to help with my IEP goals, but it's giving me generic responses that don't fit my students."</p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="font-semibold">Solutions:</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>• <strong>Add Specific Context:</strong> Include student grade level, disability category, current performance levels</li>
+                    <li>• <strong>Provide Concrete Examples:</strong> Share previous IEP goals that worked well</li>
+                    <li>• <strong>Break Down the Request:</strong> Ask for one goal at a time instead of entire IEP</li>
+                    <li>• <strong>Use Education Terminology:</strong> Reference specific assessment tools, intervention programs</li>
+                    <li>• <strong>Reset with Clarity:</strong> "Let's start over. I need help writing measurable IEP goals for a 3rd-grade student with autism who reads at kindergarten level."</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Gemini Issues -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-blue-600">When Gemini Returns Outdated Information</h3>
+            <div class="bg-blue-50 rounded-lg p-4 mb-4">
+                <p class="font-semibold mb-2">School Scenario:</p>
+                <p class="text-gray-700">"I asked about current special education law, but Gemini gave me information that seems outdated."</p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="font-semibold">Solutions:</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>• <strong>Be Explicit About Timing:</strong> "Find information about special education regulations updated after January 2024"</li>
+                    <li>• <strong>Request Source Dating:</strong> "Show me only sources from 2024-2025"</li>
+                    <li>• <strong>Cross-Reference Multiple Sources:</strong> "Compare what different authoritative sources say about this"</li>
+                    <li>• <strong>Specify Authority Level:</strong> "Focus on federal Department of Education sources and official state guidance"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ChatGPT Issues -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-green-600">When ChatGPT Free Cuts Off</h3>
+            <div class="bg-green-50 rounded-lg p-4 mb-4">
+                <p class="font-semibold mb-2">School Scenario:</p>
+                <p class="text-gray-700">"ChatGPT stopped in the middle of generating my lesson plan."</p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="font-semibold">Solutions:</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>• <strong>Immediate Recovery:</strong> "Continue from where you left off with the math center activities"</li>
+                    <li>• <strong>Chunk Requests:</strong> Ask for lesson plan sections separately (objectives, activities, assessment)</li>
+                    <li>• <strong>Save Partial Results:</strong> Copy good content before requesting more</li>
+                    <li>• <strong>Switch Platforms:</strong> Move to Claude for complex lesson planning</li>
+                    <li>• <strong>Time Strategy:</strong> Try during off-peak hours (early morning, late evening)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Perplexity Issues -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-orange-600">When Perplexity Sources Seem Weak</h3>
+            <div class="bg-orange-50 rounded-lg p-4 mb-4">
+                <p class="font-semibold mb-2">School Scenario:</p>
+                <p class="text-gray-700">"Perplexity is giving me blog posts instead of research when I ask about reading instruction."</p>
+            </div>
+            <div class="space-y-2">
+                <h4 class="font-semibold">Solutions:</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>• <strong>Specify Source Types:</strong> "Use only peer-reviewed research and government sources"</li>
+                    <li>• <strong>Academic Language:</strong> Use terms like "evidence-based," "research-validated," "meta-analysis"</li>
+                    <li>• <strong>Name Specific Journals:</strong> "Include sources from Reading Research Quarterly, Educational Psychology Review"</li>
+                    <li>• <strong>Exclude Low-Quality Sources:</strong> "Do not include blog posts, social media, or commercial websites"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team & Organizational Issues -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Team & Organizational Issues</h2>
+
+        <!-- Access Management -->
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4">Access Management Problems</h3>
+
+            <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                <h4 class="font-semibold text-red-600 mb-2">License Conflicts</h4>
+                <p class="text-gray-700 mb-2"><strong>Problem:</strong> "Multiple staff members are trying to use the same shared account."</p>
+                <div class="bg-white rounded p-3">
+                    <p class="font-semibold mb-2">Solution:</p>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Audit current usage patterns to determine who needs dedicated access</li>
+                        <li>• Calculate cost-benefit of individual vs. shared licenses</li>
+                        <li>• Implement usage scheduling for shared accounts temporarily</li>
+                        <li>• Request quotes for team/enterprise pricing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h4 class="font-semibold text-red-600 mb-2">User Provisioning Delays</h4>
+                <p class="text-gray-700 mb-2"><strong>Problem:</strong> "New staff can't access AI tools they need for their work."</p>
+                <div class="bg-white rounded p-3">
+                    <p class="font-semibold mb-2">Solution:</p>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Create standard onboarding checklist including AI tool access</li>
+                        <li>• Designate technology coordinator as AI account administrator</li>
+                        <li>• Maintain list of approved tools and access levels by role</li>
+                        <li>• Establish 48-hour turnaround goal for new user setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collaboration Challenges -->
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4">Collaboration Challenges</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-red-600 mb-2">Version Control Issues</h4>
+                    <p class="text-sm text-gray-700 mb-2">"Different staff members working with different versions of AI-generated curriculum materials."</p>
+                    <ul class="text-sm space-y-1 text-gray-700 mt-3">
+                        <li>• Implement shared folder system</li>
+                        <li>• Establish naming conventions</li>
+                        <li>• Require check-out/check-in process</li>
+                        <li>• Use collaborative editing</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-red-600 mb-2">Handoff Communication Failures</h4>
+                    <p class="text-sm text-gray-700 mb-2">"Context is lost when projects move between team members using different AI platforms."</p>
+                    <ul class="text-sm space-y-1 text-gray-700 mt-3">
+                        <li>• Standardize handoff template</li>
+                        <li>• Require summary documentation</li>
+                        <li>• Regular check-in meetings</li>
+                        <li>• Create shared project logs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance & Cost Issues -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Performance & Cost Issues</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-yellow-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Budget Overruns</h3>
+                <p class="text-sm text-gray-700 mb-3"><strong>Problem:</strong> "AI tool costs are exceeding department budgets."</p>
+                <div class="bg-white rounded p-3">
+                    <p class="font-semibold mb-2">Monthly Cost Management Process:</p>
+                    <ol class="text-sm space-y-1 text-gray-700">
+                        <li>1. <strong>Usage Audit:</strong> Review which tools provide value vs. cost</li>
+                        <li>2. <strong>User Analysis:</strong> Identify heavy users for team accounts</li>
+                        <li>3. <strong>Task Assessment:</strong> Determine which tasks truly need paid features</li>
+                        <li>4. <strong>Alternative Evaluation:</strong> Consider if free tools could handle some tasks</li>
+                        <li>5. <strong>Negotiation:</strong> Contact vendors about education pricing</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Inefficient Usage Patterns</h3>
+                <p class="text-sm text-gray-700 mb-3"><strong>Problem:</strong> "Staff using expensive tools for simple tasks."</p>
+                <div class="bg-white rounded p-3">
+                    <p class="font-semibold mb-2">Optimization Strategy:</p>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Provide role-specific training on platform selection</li>
+                        <li>• Create decision trees for platform selection</li>
+                        <li>• Monitor usage patterns and provide coaching</li>
+                        <li>• Celebrate efficient usage in staff meetings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compliance & Security Issues -->
+    <div class="bg-red-50 rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-red-800">Compliance & Security Issues</h2>
+
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4">Data Privacy Violations</h3>
+            <p class="text-gray-700 mb-3"><strong>Critical Problem:</strong> "Staff member accidentally included student PII in AI prompt."</p>
+
+            <div class="bg-white rounded-lg p-4">
+                <h4 class="font-semibold mb-3">Immediate Response Protocol:</h4>
+                <ol class="space-y-2 text-gray-700">
+                    <li><strong>1. Stop Usage:</strong> Immediately discontinue use of that account/platform</li>
+                    <li><strong>2. Document Incident:</strong> Record what information was shared and when</li>
+                    <li><strong>3. Contact Platform:</strong> Inquire about data deletion policies</li>
+                    <li><strong>4. Legal Review:</strong> Consult district legal counsel about notification requirements</li>
+                    <li><strong>5. Retraining:</strong> Provide additional privacy training to all staff</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4">Policy Compliance Issues</h3>
+            <p class="text-gray-700 mb-3"><strong>Problem:</strong> "AI-generated content doesn't align with district policies or values."</p>
+
+            <div class="bg-white rounded-lg p-4">
+                <h4 class="font-semibold mb-3">Prevention and Response:</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>• <strong>Proactive:</strong> Create district-specific prompt templates that include policy alignment</li>
+                    <li>• <strong>Review Process:</strong> Establish approval workflows for public-facing AI content</li>
+                    <li>• <strong>Training:</strong> Regular workshops on creating prompts that reflect district values</li>
+                    <li>• <strong>Quality Control:</strong> Random audit process for AI-assisted work outputs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Escalation Procedures -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Escalation Procedures</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="font-semibold text-lg mb-3">When to Move from Free to Paid Tiers</h3>
+                <div class="bg-blue-50 rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">Individual Level Indicators:</h4>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Using AI tools more than 2 hours per week</li>
+                        <li>• Free tier limitations interrupt critical work</li>
+                        <li>• Need for priority access during peak times</li>
+                        <li>• Require advanced features for professional output</li>
+                    </ul>
+
+                    <h4 class="font-semibold mt-3 mb-2">Department Level Indicators:</h4>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Multiple team members hitting free tier limits</li>
+                        <li>• Collaborative projects requiring shared access</li>
+                        <li>• Need for enhanced security features</li>
+                        <li>• ROI analysis shows productivity gains justify cost</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3">Support Contact Priority</h3>
+                <div class="bg-green-50 rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">Before Contacting Support:</h4>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>□ Check platform status pages for known issues</li>
+                        <li>□ Review documentation and help resources</li>
+                        <li>□ Try the issue on a different device/browser</li>
+                        <li>□ Gather specific error messages and screenshots</li>
+                    </ul>
+
+                    <h4 class="font-semibold mt-3 mb-2">Contact Priority:</h4>
+                    <ol class="text-sm space-y-1 text-gray-700">
+                        <li>1. <strong>Technical Issues:</strong> Platform-specific support channels</li>
+                        <li>2. <strong>Billing/Account:</strong> Direct to platform billing support</li>
+                        <li>3. <strong>Policy Questions:</strong> Internal IT/Legal team first</li>
+                        <li>4. <strong>Training Needs:</strong> Internal professional development</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internal Support Structure -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-6">Internal Team Support Structure</h2>
+
+        <div class="space-y-4">
+            <div class="flex items-start">
+                <span class="bg-blue-600 text-white rounded-full px-3 py-1 mr-3 flex-shrink-0">Level 1</span>
+                <div>
+                    <h4 class="font-semibold">Peer Support</h4>
+                    <p class="text-gray-700">Department colleagues with similar AI experience for informal mentoring and problem-solving</p>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="bg-blue-600 text-white rounded-full px-3 py-1 mr-3 flex-shrink-0">Level 2</span>
+                <div>
+                    <h4 class="font-semibold">Department Leaders</h4>
+                    <p class="text-gray-700">Department heads trained in advanced AI usage who can approve upgrades and connect with resources</p>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="bg-blue-600 text-white rounded-full px-3 py-1 mr-3 flex-shrink-0">Level 3</span>
+                <div>
+                    <h4 class="font-semibold">District Technology Team</h4>
+                    <p class="text-gray-700">IT coordinator with AI platform expertise for account access, security, and compliance issues</p>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="bg-blue-600 text-white rounded-full px-3 py-1 mr-3 flex-shrink-0">Level 4</span>
+                <div>
+                    <h4 class="font-semibold">External Consultants</h4>
+                    <p class="text-gray-700">Specialized AI in education consultants, vendor representatives, and legal counsel for complex issues</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

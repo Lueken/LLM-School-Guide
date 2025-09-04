@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-blue-600 font-semibold px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Prompt Engineering</a>
+        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Prompt Engineering Tools & Libraries</h1>
+        <p class="text-xl">Optimize your prompts for better educational outcomes</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Development & Testing Tools -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Development & Testing Tools</h2>
+
+        <div class="space-y-6">
+            <!-- Individual User Tools -->
+            <div class="border-l-4 border-indigo-500 pl-4">
+                <h3 class="text-xl font-semibold mb-4">For Individual Users</h3>
+
+                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                    <h4 class="font-semibold text-lg mb-2">PromptPerfect</h4>
+                    <p class="text-sm text-gray-600 mb-2">Website: promptperfect.jina.ai</p>
+                    <p class="text-gray-700 mb-2"><strong>What it does:</strong> Automatically optimizes your prompts for better results</p>
+                    <p class="text-gray-700 mb-2"><strong>School use case:</strong> Improve lesson plan generation prompts for consistency</p>
+                    <p class="text-gray-700 mb-2"><strong>Cost:</strong> Free tier available, paid plans for advanced features</p>
+                    <p class="text-gray-700"><strong>Best for:</strong> Teachers who want to refine their go-to prompts</p>
+                </div>
+            </div>
+
+            <!-- District-Level Tools -->
+            <div class="border-l-4 border-indigo-500 pl-4">
+                <h3 class="text-xl font-semibold mb-4">For District-Level Implementation</h3>
+
+                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                    <h4 class="font-semibold text-lg mb-2">Promptfoo</h4>
+                    <p class="text-sm text-gray-600 mb-2">Website: promptfoo.dev</p>
+                    <p class="text-gray-700 mb-2"><strong>What it does:</strong> Compare how different prompts perform across multiple AI platforms</p>
+                    <p class="text-gray-700 mb-2"><strong>School use case:</strong> Test which prompts work best for creating IEP goals across different AI tools</p>
+                    <p class="text-gray-700 mb-2"><strong>Cost:</strong> Open source (free)</p>
+                    <p class="text-gray-700"><strong>Best for:</strong> IT departments setting up district-wide AI standards</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-lg mb-2">Agenta</h4>
+                    <p class="text-sm text-gray-600 mb-2">Website: agenta.ai</p>
+                    <p class="text-gray-700 mb-2"><strong>What it does:</strong> Team collaboration platform for developing and testing prompts</p>
+                    <p class="text-gray-700 mb-2"><strong>School use case:</strong> Curriculum teams can collaborate on developing standard prompts for lesson planning</p>
+                    <p class="text-gray-700 mb-2"><strong>Cost:</strong> Free tier for small teams, paid for larger organizations</p>
+                    <p class="text-gray-700"><strong>Best for:</strong> Departments that need to standardize their AI usage</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prompt Libraries & Resources -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Prompt Libraries & Resources</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Platform-Native Libraries -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Platform-Native Libraries</h3>
+
+                <div class="space-y-4">
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <h4 class="font-semibold mb-2">OpenAI Cookbook</h4>
+                        <p class="text-sm text-gray-600 mb-2">Access: cookbook.openai.com</p>
+                        <p class="text-gray-700 text-sm mb-1">• Education-specific prompt examples</p>
+                        <p class="text-gray-700 text-sm mb-1">• Best practices guides</p>
+                        <p class="text-gray-700 text-sm">• Parent communication templates</p>
+                    </div>
+
+                    <div class="bg-purple-50 rounded-lg p-4">
+                        <h4 class="font-semibold mb-2">Anthropic Prompt Library</h4>
+                        <p class="text-sm text-gray-600 mb-2">Access: docs.anthropic.com</p>
+                        <p class="text-gray-700 text-sm mb-1">• Complex reasoning prompts</p>
+                        <p class="text-gray-700 text-sm mb-1">• Curriculum development templates</p>
+                        <p class="text-gray-700 text-sm">• Policy analysis guides</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Resources -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Community Resources</h3>
+
+                <div class="space-y-4">
+                    <div class="bg-green-50 rounded-lg p-4">
+                        <h4 class="font-semibold mb-2">Awesome ChatGPT Prompts</h4>
+                        <p class="text-sm text-gray-600 mb-2">GitHub Repository</p>
+                        <p class="text-gray-700 text-sm mb-1">• Thousands of community prompts</p>
+                        <p class="text-gray-700 text-sm mb-1">• Role-specific templates</p>
+                        <p class="text-gray-700 text-sm">• Regularly updated</p>
+                    </div>
+
+                    <div class="bg-orange-50 rounded-lg p-4">
+                        <h4 class="font-semibold mb-2">Education-Specific Collections</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• <strong>TeachWithAI.com:</strong> Curated prompts for classroom teachers</li>
+                            <li>• <strong>EdTechHub:</strong> Research-backed prompts for educational technology</li>
+                            <li>• <strong>ISTE AI Guidelines:</strong> Professional development and ethical use prompts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Collaboration Platforms -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Team Collaboration Platforms</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">PromptHub</h3>
+                <p class="text-gray-700 mb-2"><strong>What it does:</strong> Centralized storage and sharing of prompts with performance metrics</p>
+                <p class="text-gray-700 mb-2"><strong>School use case:</strong> Share successful lesson planning prompts across the district</p>
+                <p class="text-gray-700 mb-2"><strong>Features:</strong> Version control, usage analytics, team permissions</p>
+                <p class="text-gray-700"><strong>Pricing:</strong> Free for small teams, enterprise pricing for districts</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Promptmetheus</h3>
+                <p class="text-gray-700 mb-2"><strong>What it does:</strong> A/B testing for prompts with collaborative editing</p>
+                <p class="text-gray-700 mb-2"><strong>School use case:</strong> Test which parent communication prompts get better response rates</p>
+                <p class="text-gray-700 mb-2"><strong>Features:</strong> Split testing, performance dashboards, team workflows</p>
+                <p class="text-gray-700"><strong>Best for:</strong> Districts wanting to optimize their AI communication strategies</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise Prompt Management -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Enterprise-Level Prompt Management</h2>
+
+        <div class="border-l-4 border-blue-500 pl-4 mb-6">
+            <h3 class="text-xl font-semibold mb-3">District Prompt Library System</h3>
+
+            <!-- Teacher Template -->
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2">Standardized Template - Teachers</h4>
+                <div class="template-box">
+                        <pre id="teacher-prompt-template">LESSON_PLAN_TEMPLATE = """
+Create a detailed lesson plan for {grade_level} {subject} on {topic}.
+Include:
+- Learning objectives aligned to {standards}
+- 3 differentiation strategies for diverse learners
+- Formative assessment checkpoints
+- Materials list with alternatives for limited resources
+- Extension activities for early finishers
+- Accommodation suggestions for IEP students
+Format as ready-to-use lesson plan document.
+"""</pre>
+                </div>
+                <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="teacher-prompt-template" onclick="copyToClipboard('teacher-prompt-template')">
+                    Copy Template
+                </button>
+            </div>
+
+            <!-- Administrator Template -->
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2">Standardized Template - Administrators</h4>
+                <div class="template-box">
+                        <pre id="admin-prompt-template">POLICY_ANALYSIS_TEMPLATE = """
+Analyze the attached policy proposal for {policy_area}.
+Consider:
+- Alignment with federal and state regulations
+- Impact on different student populations
+- Implementation challenges and resource requirements
+- Potential unintended consequences
+- Comparison with best practices from similar districts
+Provide recommendation with supporting rationale.
+"""</pre>
+                </div>
+                <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="admin-prompt-template" onclick="copyToClipboard('admin-prompt-template')">
+                    Copy Template
+                </button>
+            </div>
+        </div>
+
+        <!-- Version Control -->
+        <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="text-xl font-semibold mb-3">Version Control for Educational Prompts</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li>✓ GitHub repository for district prompt templates</li>
+                <li>✓ Regular updates based on effectiveness data</li>
+                <li>✓ Branch management for different school levels</li>
+                <li>✓ Collaborative improvement process</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Prompt Optimization Tips -->
+    <div class="bg-blue-50 rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Prompt Optimization Best Practices</h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+            <div>
+                <h3 class="font-semibold mb-2">Structure</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Clear role definition</li>
+                    <li>• Specific context</li>
+                    <li>• Explicit constraints</li>
+                    <li>• Output format</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Testing</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• A/B test variations</li>
+                    <li>• Track success metrics</li>
+                    <li>• Iterate based on results</li>
+                    <li>• Share successful prompts</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Management</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Version control</li>
+                    <li>• Team collaboration</li>
+                    <li>• Performance analytics</li>
+                    <li>• Regular updates</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

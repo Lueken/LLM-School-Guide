@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates Library - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-blue-600 font-semibold px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Templates</a>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Templates Library</h1>
+        <p class="text-xl">Comprehensive collection of AI prompts for educational professionals</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Teacher Templates -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-blue-600">Elementary Teacher Templates</h2>
+
+        <!-- Differentiation Template -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Differentiation Strategy</h3>
+            <div class="template-box">
+                    <pre id="elem-diff-template">I'm teaching [TOPIC] to [GRADE LEVEL] students. I have [NUMBER] students with these needs:
+- [NUMBER] English learners at [PROFICIENCY LEVELS]
+- [NUMBER] students with IEPs for [SPECIFIC NEEDS]
+- [NUMBER] students reading above/below grade level
+
+Create 3 different approaches to teach this concept:
+1. Visual/hands-on approach for kinesthetic learners
+2. Simplified version for struggling students
+3. Extension activities for advanced learners
+
+Include specific materials and step-by-step instructions.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="elem-diff-template" onclick="copyToClipboard('elem-diff-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Parent Communication Template -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Positive Parent Communication</h3>
+            <div class="template-box">
+                    <pre id="parent-comm-template">Write a positive email to parents about [STUDENT NAME]'s progress in [SUBJECT/BEHAVIOR AREA].
+
+Include:
+- Specific example of improvement or achievement
+- What we're working on next
+- How parents can support at home
+- Invitation for questions or conference
+
+Keep tone warm, encouraging, and professional. Length: 150-200 words.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="parent-comm-template" onclick="copyToClipboard('parent-comm-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Assessment Creation Template -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Assessment Creation</h3>
+            <div class="template-box">
+                    <pre id="assessment-template">Create a [FORMATIVE/SUMMATIVE] assessment for [GRADE LEVEL] [SUBJECT] on [TOPIC].
+
+Include:
+- 5 questions at varying difficulty levels
+- Clear rubric with 4-point scale
+- Accommodation suggestions for special needs
+- Extension questions for early finishers
+
+Align to [STATE STANDARDS] and focus on [LEARNING OBJECTIVES].</pre>
+            </div>
+            <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="assessment-template" onclick="copyToClipboard('assessment-template')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Administrator Templates -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-purple-600">Administrator Templates</h2>
+
+        <!-- Policy Development Template -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Policy Development</h3>
+            <div class="template-box">
+                    <pre id="policy-dev-template">Help me develop a policy for [POLICY AREA] at our [ELEMENTARY/MIDDLE/HIGH] school.
+
+Current situation: [DESCRIBE CURRENT STATE]
+Problem to solve: [SPECIFIC ISSUES]
+Stakeholders affected: [LIST GROUPS]
+Legal considerations: [RELEVANT LAWS/REGULATIONS]
+Budget impact: [FINANCIAL CONSTRAINTS]
+
+Create a draft policy that includes:
+1. Clear purpose and scope
+2. Specific procedures and expectations
+3. Implementation timeline
+4. Monitoring and evaluation plan
+5. Communication strategy for stakeholders</pre>
+            </div>
+            <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="policy-dev-template" onclick="copyToClipboard('policy-dev-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Data Analysis Template -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Data Analysis Support</h3>
+            <div class="template-box">
+                    <pre id="data-analysis-template">Help me analyze our [ASSESSMENT/PROGRAM] data and create actionable insights.
+
+Data summary: [PASTE DATA OR DESCRIBE RESULTS]
+Student demographics: [POPULATION DETAILS]
+Comparison points: [PREVIOUS YEARS, OTHER SCHOOLS, BENCHMARKS]
+
+Provide:
+1. Key patterns and trends identified
+2. Potential root causes for concerning areas
+3. Specific intervention recommendations
+4. Success celebration opportunities
+5. Next steps for improvement planning
+
+Focus on equity and ensuring all students succeed.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="data-analysis-template" onclick="copyToClipboard('data-analysis-template')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Special Education Templates -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-orange-600">Special Education Templates</h2>
+
+        <!-- IEP Goal Development -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">IEP Goal Development</h3>
+            <div class="template-box">
+                    <pre id="iep-goal-template">Create measurable IEP goals for a [GRADE] student with [DISABILITY CATEGORY].
+
+Current performance level: [SPECIFIC DATA]
+Area of need: [ACADEMIC/BEHAVIORAL/FUNCTIONAL DOMAIN]
+Assessment data: [RELEVANT SCORES/OBSERVATIONS]
+
+Goal should:
+- Be measurable with specific criteria
+- Include appropriate timeline (usually 1 year)
+- Address skill development in natural settings
+- Consider least restrictive environment
+- Include data collection method
+
+Format as complete IEP goal ready for team review.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700" data-target="iep-goal-template" onclick="copyToClipboard('iep-goal-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Accommodation Planning -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Accommodation Planning</h3>
+            <div class="template-box">
+                    <pre id="accommodation-template">A [GRADE LEVEL] student with [DISABILITY/LEARNING DIFFERENCE] is struggling with [SPECIFIC CHALLENGE].
+
+Student strengths: [LIST ABILITIES]
+Current supports: [EXISTING ACCOMMODATIONS]
+Specific difficulties: [DETAILED CHALLENGES]
+Learning environment: [CLASSROOM SETUP, SIZE, ETC.]
+
+Recommend:
+1. Specific accommodations for this challenge
+2. Implementation strategies for teachers
+3. Progress monitoring suggestions
+4. Home-school collaboration ideas
+5. Technology tools that might help
+
+Focus on maintaining high expectations while providing appropriate support.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700" data-target="accommodation-template" onclick="copyToClipboard('accommodation-template')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Curriculum Specialist Templates -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-indigo-600">Curriculum Specialist Templates</h2>
+
+        <!-- Scope and Sequence -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Scope and Sequence Development</h3>
+            <div class="template-box">
+                    <pre id="scope-sequence-template">Help me develop a scope and sequence for [GRADE LEVEL] [SUBJECT] aligned to [STANDARDS].
+
+Consider:
+- Prerequisite skills from [PREVIOUS GRADE]
+- Vertical alignment with [NEXT GRADE]
+- Integration opportunities with [OTHER SUBJECTS]
+- Our district's emphasis on [TEACHING APPROACH]
+
+Include:
+- Pacing guide for [NUMBER]-day school year
+- Built-in review and assessment windows
+- Differentiation considerations
+- Resource requirements
+
+Format as a comprehensive planning document.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700" data-target="scope-sequence-template" onclick="copyToClipboard('scope-sequence-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Professional Development Design -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Professional Development Design</h3>
+            <div class="template-box">
+                    <pre id="pd-design-template">Design a professional development session on [TOPIC] for [AUDIENCE].
+
+Duration: [TIME AVAILABLE]
+Participants: [NUMBER AND ROLES]
+Current skill level: [BEGINNER/INTERMEDIATE/ADVANCED]
+Implementation timeline: [WHEN SKILLS WILL BE USED]
+
+Create:
+1. Learning objectives aligned to adult learning principles
+2. Engaging activities with hands-on practice
+3. Resources and handouts
+4. Follow-up support plan
+5. Success metrics
+
+Include differentiation for varying experience levels.</pre>
+            </div>
+            <button class="copy-button mt-2 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700" data-target="pd-design-template" onclick="copyToClipboard('pd-design-template')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Multi-Platform Workflow Templates -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-teal-600">Multi-Platform Workflow Templates</h2>
+
+        <!-- Problem Definition -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Problem Definition (Universal)</h3>
+            <div class="template-box">
+                    <pre id="problem-def-template">EDUCATIONAL CHALLENGE: [Specific problem you're solving]
+CURRENT STATE: [Where your school/district is now]
+DESIRED OUTCOME: [Clear success criteria]
+CONSTRAINTS: [Budget, time, policy limitations]
+STAKEHOLDERS: [Students, parents, staff, board, community]
+SUCCESS METRICS: [How you'll measure improvement]
+TIMELINE: [Implementation deadlines]
+RESOURCES: [Available staff, materials, technology]</pre>
+            </div>
+            <button class="copy-button mt-2 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700" data-target="problem-def-template" onclick="copyToClipboard('problem-def-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Context Transfer -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Context Transfer Between Platforms</h3>
+            <div class="template-box">
+                    <pre id="context-transfer-2">PREVIOUS ANALYSIS with [Platform Name]:
+Research findings:
+• [Key finding 1]
+• [Key finding 2]
+• [Key finding 3]
+
+DECISIONS MADE:
+• [Decision 1]
+• [Decision 2]
+
+OPEN QUESTIONS:
+• [Question 1]
+• [Question 2]
+
+NOW I NEED [New Platform] TO:
+[Specific request based on previous work]
+Please consider the context above and [specific instruction].</pre>
+            </div>
+            <button class="copy-button mt-2 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700" data-target="context-transfer-2" onclick="copyToClipboard('context-transfer-2')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- Team Handoff -->
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-3">Team Handoff Protocol</h3>
+            <div class="template-box">
+                    <pre id="team-handoff-template">PROJECT: [Name and scope]
+CURRENT PHASE: [Research/Analysis/Implementation]
+COMPLETED: [What's been done and with which platform]
+NEXT STEPS: [What needs to happen next]
+HANDOFF TO: [Who and which platform they should use]
+KEY CONTEXT: [Essential information for next person]
+DEADLINE: [When this phase needs completion]</pre>
+            </div>
+            <button class="copy-button mt-2 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700" data-target="team-handoff-template" onclick="copyToClipboard('team-handoff-template')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick Start Templates -->
+    <div class="bg-blue-50 rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Quick Start Templates by Role</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Teacher First Prompt</h3>
+                <p class="text-sm text-gray-700">"I teach [grade level] [subject] and need help with [specific task]. My students include [brief demographics]. Please provide practical, immediately usable suggestions that consider limited classroom resources."</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Administrator First Prompt</h3>
+                <p class="text-sm text-gray-700">"I need to analyze [situation/decision] for our [school level]. Consider our context: [student population size and demographics]. What approach would you recommend?"</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Curriculum Specialist First Prompt</h3>
+                <p class="text-sm text-gray-700">"Help me align [curriculum element] with [state standards] for [grade range]. I need both the theoretical framework and practical implementation strategies."</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Special Ed Staff First Prompt</h3>
+                <p class="text-sm text-gray-700">"I'm working with a [grade] student with [disability category] who needs support in [specific area]. Current performance data shows [brief summary]."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Platform-Specific Best Prompts -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-6">Platform-Specific Starting Points</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2 text-purple-600">Claude</h3>
+                <p class="text-xs text-gray-700">"I need to analyze [complex educational challenge]. Here's comprehensive context: [detailed background]. Walk me through your reasoning process and consider multiple perspectives."</p>
+            </div>
+
+            <div class="bg-blue-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2 text-blue-600">Gemini</h3>
+                <p class="text-xs text-gray-700">"Find current information about [educational topic] from 2024-2025. Focus on [specific aspect] relevant to [grade/subject]. Include implementation examples from similar districts."</p>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2 text-green-600">ChatGPT</h3>
+                <p class="text-xs text-gray-700">"[Clear, specific request in first sentence]. Context: [brief essential info]. Format: [exactly how you want output]. Keep under [word count]."</p>
+            </div>
+
+            <div class="bg-orange-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2 text-orange-600">Perplexity</h3>
+                <p class="text-xs text-gray-700">"Research [specific educational topic]. Use only peer-reviewed sources and government reports from 2022-2025. Include methodology and conflicting viewpoints."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Implementation - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-blue-600 font-semibold px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Team Implementation</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Team Implementation Strategy</h1>
+        <p class="text-xl">Roll out AI tools effectively across your school district</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Access Management & Governance -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Access Management & Governance</h2>
+
+        <!-- License Allocation Strategy -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">License Allocation Strategy</h3>
+
+            <div class="space-y-4">
+                <div class="bg-red-50 border-l-4 border-red-500 p-4">
+                    <h4 class="font-semibold text-lg mb-2">Tier 1 - Essential Users (Paid Access)</h4>
+                    <ul class="space-y-1 text-gray-700">
+                        <li>• Superintendent and cabinet-level administrators</li>
+                        <li>• Curriculum directors and instructional coordinators</li>
+                        <li>• Special education directors</li>
+                        <li>• Technology coordinators</li>
+                        <li>• Principal-level administrators at largest schools</li>
+                    </ul>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                    <h4 class="font-semibold text-lg mb-2">Tier 2 - Regular Users (Mixed Free/Paid)</h4>
+                    <ul class="space-y-1 text-gray-700">
+                        <li>• Building principals</li>
+                        <li>• Department heads and team leaders</li>
+                        <li>• Specialists (counselors, librarians, nurse coordinators)</li>
+                        <li>• Teachers with leadership roles</li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                    <h4 class="font-semibold text-lg mb-2">Tier 3 - Occasional Users (Free Tier)</h4>
+                    <ul class="space-y-1 text-gray-700">
+                        <li>• Classroom teachers (with option to upgrade)</li>
+                        <li>• Support staff</li>
+                        <li>• Paraprofessionals</li>
+                        <li>• Substitute coordinators</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Monitoring -->
+        <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="text-xl font-semibold mb-3">Usage Monitoring & Optimization</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-semibold mb-2">Monthly Review Process</h4>
+                    <ol class="space-y-1 text-sm text-gray-700">
+                        <li>1. Track usage analytics</li>
+                        <li>2. Evaluate ROI for paid subscriptions</li>
+                        <li>3. Survey staff about effectiveness</li>
+                        <li>4. Adjust access levels as needed</li>
+                    </ol>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Governance Framework</h4>
+                    <ul class="space-y-1 text-sm text-gray-700">
+                        <li>• No student PII in AI platforms</li>
+                        <li>• Review all external content</li>
+                        <li>• Regular compliance audits</li>
+                        <li>• Legal review for policy content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onboarding & Training Pathways -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Onboarding & Training Pathways</h2>
+
+        <!-- New Staff Checklist -->
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4">New Staff Member Checklist</h3>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-blue-50 rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">Week 1 - Account Setup</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li>□ Review AI usage policies</li>
+                        <li>□ Set up approved accounts</li>
+                        <li>□ Complete basic training</li>
+                        <li>□ Join AI user community</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">Week 2 - Role Training</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li>□ Complete job-specific modules</li>
+                        <li>□ Practice with templates</li>
+                        <li>□ Shadow experienced colleague</li>
+                        <li>□ First supervised project</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">Month 1 - Practice</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li>□ Complete 5 AI tasks</li>
+                        <li>□ Attend user group meeting</li>
+                        <li>□ Provide feedback</li>
+                        <li>□ Set personal goals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progressive Skill Development -->
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4">Progressive Skill Development Tracks</h3>
+
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                    <div>
+                        <h4 class="font-semibold">Beginner Track (All Staff)</h4>
+                        <p class="text-gray-700">Basic prompt writing, platform navigation, privacy awareness, simple task automation</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                    <div>
+                        <h4 class="font-semibold">Intermediate Track (Regular Users)</h4>
+                        <p class="text-gray-700">Advanced prompting, multi-platform workflows, quality assurance, collaboration</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <span class="bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                    <div>
+                        <h4 class="font-semibold">Advanced Track (Power Users)</h4>
+                        <p class="text-gray-700">Custom prompt development, integration strategies, training others, innovation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Levels -->
+        <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="text-xl font-semibold mb-3">Certification Levels</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div>
+                    <h4 class="font-semibold mb-1">🥉 AI Basics Certified</h4>
+                    <p class="text-sm text-gray-700">Understands policies, basic prompts, follows guidelines</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-1">🥈 AI Proficient</h4>
+                    <p class="text-sm text-gray-700">Multiple platforms, custom prompts, collaborates effectively</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-1">🥇 AI Leader</h4>
+                    <p class="text-sm text-gray-700">Mentors others, develops materials, leads innovation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Implementation Timeline -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Implementation Timeline</h2>
+
+        <div class="space-y-4">
+            <div class="flex items-start">
+                <div class="bg-blue-600 text-white rounded-lg px-3 py-1 mr-4 flex-shrink-0">Month 1</div>
+                <div>
+                    <h4 class="font-semibold">Foundation & Planning</h4>
+                    <ul class="text-sm text-gray-700 mt-1">
+                        <li>• Establish AI governance committee</li>
+                        <li>• Create usage policies and guidelines</li>
+                        <li>• Set up initial accounts for Tier 1 users</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <div class="bg-blue-600 text-white rounded-lg px-3 py-1 mr-4 flex-shrink-0">Month 2</div>
+                <div>
+                    <h4 class="font-semibold">Pilot Program</h4>
+                    <ul class="text-sm text-gray-700 mt-1">
+                        <li>• Launch pilot with department leaders</li>
+                        <li>• Begin training for early adopters</li>
+                        <li>• Collect initial feedback and adjust</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <div class="bg-blue-600 text-white rounded-lg px-3 py-1 mr-4 flex-shrink-0">Month 3</div>
+                <div>
+                    <h4 class="font-semibold">Expanded Rollout</h4>
+                    <ul class="text-sm text-gray-700 mt-1">
+                        <li>• Open access to Tier 2 users</li>
+                        <li>• Launch comprehensive training program</li>
+                        <li>• Establish support channels</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <div class="bg-blue-600 text-white rounded-lg px-3 py-1 mr-4 flex-shrink-0">Month 4-6</div>
+                <div>
+                    <h4 class="font-semibold">Full Implementation</h4>
+                    <ul class="text-sm text-gray-700 mt-1">
+                        <li>• District-wide access available</li>
+                        <li>• Ongoing training and support</li>
+                        <li>• Regular evaluation and optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cost Optimization Matrix -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Cost Optimization Matrix</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-lg font-semibold mb-3">When to Use Free Tiers</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Exploration Phase: Testing new approaches</li>
+                    <li>✓ Simple Tasks: Quick emails, basic planning</li>
+                    <li>✓ Low-Stakes Decisions: When errors won't impact students</li>
+                    <li>✓ Practice: Learning new techniques</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-3">When to Upgrade to Paid</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ High-Impact Decisions: Curriculum, policy</li>
+                    <li>✓ Time-Critical Tasks: Need immediate access</li>
+                    <li>✓ Complex Projects: Multi-step initiatives</li>
+                    <li>✓ Professional Output: Board presentations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+            <h4 class="font-semibold mb-2">Escalation Triggers</h4>
+            <ul class="text-sm space-y-1 text-gray-700">
+                <li>• Free tier limitations interrupt workflow more than twice per week</li>
+                <li>• Need to process confidential information with better security</li>
+                <li>• Collaborating with team members who need shared access</li>
+                <li>• Creating materials that represent the district professionally</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Monitoring & Optimization Templates -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-6">Monitoring & Optimization</h2>
+
+        <!-- Individual Review Template -->
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-3">Monthly Usage Review Template</h3>
+            <div class="template-box">
+                    <pre id="usage-review-template">USER: [Name and Role]
+REVIEW PERIOD: [Month/Year]
+
+USAGE SUMMARY:
+• Platform 1: [Hours used, main tasks]
+• Platform 2: [Hours used, main tasks]
+
+PRODUCTIVITY IMPACT:
+• Time saved: [Estimated hours per week]
+• Quality improvements: [Specific examples]
+
+OPTIMIZATION RECOMMENDATIONS:
+• Account changes: [Upgrade/downgrade suggestions]
+• Training needs: [Specific skill gaps]
+
+COST-BENEFIT ANALYSIS:
+• Monthly cost: $[Amount]
+• Value created: [Quantified benefits]
+• ROI rating: [High/Medium/Low]</pre>
+            </div>
+            <button class="copy-button mt-2 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700" data-target="usage-review-template" onclick="copyToClipboard('usage-review-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <!-- ROI Measurement -->
+        <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="text-xl font-semibold mb-3">ROI Measurement Framework</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-semibold mb-2">Quantitative Metrics</h4>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Time savings (hours per week)</li>
+                        <li>• Cost reduction (materials, resources)</li>
+                        <li>• Productivity increase (tasks completed)</li>
+                        <li>• Quality improvement (error reduction)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Qualitative Indicators</h4>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• Staff satisfaction with AI assistance</li>
+                        <li>• Student engagement improvements</li>
+                        <li>• Parent feedback on communications</li>
+                        <li>• Innovation in teaching practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

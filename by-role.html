@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide By Role - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation (same as index) -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-blue-600 font-semibold px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">By Role</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Platform Guide By Role</h1>
+        <p class="text-xl">Tailored recommendations based on your position in the school district</p>
+    </div>
+</div>
+
+<!-- Role Selector -->
+<div class="bg-white shadow-sm sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap gap-2 py-4">
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="teacher">
+                Classroom Teacher
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="administrator">
+                Administrator
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="curriculum">
+                Curriculum Specialist
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="special-ed">
+                Special Education
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="support">
+                Support Staff
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Teacher Content -->
+    <div class="role-content hidden" data-role="teacher">
+        <h2 class="text-3xl font-bold mb-6">Classroom Teacher AI Guide</h2>
+
+        <!-- Platform Recommendations -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Recommended Platform Stack</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Primary Tool: ChatGPT</h4>
+                    <p class="text-gray-700 mb-3">For daily communications and quick tasks</p>
+                    <p class="text-sm text-gray-600">Budget: $20/month (ChatGPT Plus)</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Parent emails</li>
+                        <li>• Assignment creation</li>
+                        <li>• Quick brainstorming</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Secondary Tool: Claude</h4>
+                    <p class="text-gray-700 mb-3">For complex lesson planning</p>
+                    <p class="text-sm text-gray-600">Budget: Free tier or $20/month</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Curriculum development</li>
+                        <li>• Differentiation strategies</li>
+                        <li>• Complex problem-solving</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <p class="text-sm"><strong>Total Monthly Budget:</strong> $20-40 depending on usage</p>
+            </div>
+        </div>
+
+        <!-- Daily Workflow -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Daily AI Workflow</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                    <div>
+                        <h4 class="font-semibold">Morning (7:00-8:00 AM)</h4>
+                        <p class="text-gray-700">Use ChatGPT for quick parent emails and daily planning adjustments</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                    <div>
+                        <h4 class="font-semibold">Planning Time</h4>
+                        <p class="text-gray-700">Use Claude for detailed lesson development and differentiation strategies</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                    <div>
+                        <h4 class="font-semibold">After School</h4>
+                        <p class="text-gray-700">ChatGPT for grading feedback and tomorrow's prep</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                    <div>
+                        <h4 class="font-semibold">Weekly Research</h4>
+                        <p class="text-gray-700">Perplexity (free) for fact-checking and finding teaching resources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Prompts -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Best First Prompt</h3>
+            <div class="template-box">
+                <p id="teacher-first-prompt">"I teach [grade level] [subject] and need help with [specific task]. My students include [brief demographics]. Please provide practical, immediately usable suggestions that consider limited classroom resources."</p>
+            </div>
+            <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="teacher-first-prompt" onclick="copyToClipboard('teacher-first-prompt')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Administrator Content -->
+    <div class="role-content hidden" data-role="administrator">
+        <h2 class="text-3xl font-bold mb-6">Administrator AI Guide</h2>
+
+        <!-- Platform Recommendations -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Recommended Platform Stack</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Primary Tool: Claude</h4>
+                    <p class="text-gray-700 mb-3">For policy analysis and strategic planning</p>
+                    <p class="text-sm text-gray-600">Budget: $20/month (Claude Pro)</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Policy development</li>
+                        <li>• Strategic planning</li>
+                        <li>• Data analysis</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-orange-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Secondary Tool: Perplexity</h4>
+                    <p class="text-gray-700 mb-3">For research and verification</p>
+                    <p class="text-sm text-gray-600">Budget: $20/month (Pro)</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Policy research</li>
+                        <li>• Best practices</li>
+                        <li>• Legal compliance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <p class="text-sm"><strong>Total Monthly Budget:</strong> $40 for comprehensive capabilities</p>
+            </div>
+        </div>
+
+        <!-- Weekly Workflow -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Weekly AI Workflow</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                    <div>
+                        <h4 class="font-semibold">Policy Research</h4>
+                        <p class="text-gray-700">Perplexity for current educational law and best practices</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                    <div>
+                        <h4 class="font-semibold">Strategic Planning</h4>
+                        <p class="text-gray-700">Claude for analyzing complex decisions and implications</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                    <div>
+                        <h4 class="font-semibold">Current Trends</h4>
+                        <p class="text-gray-700">Gemini for latest educational developments</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                    <div>
+                        <h4 class="font-semibold">Communications</h4>
+                        <p class="text-gray-700">ChatGPT for stakeholder communications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Prompts -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Best First Prompt</h3>
+            <div class="template-box">
+                <p id="admin-first-prompt">"I need to analyze [situation/decision] for our [school level]. Consider our context: [student population size and demographics]. What approach would you recommend and what implementation challenges should I anticipate?"</p>
+            </div>
+            <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="admin-first-prompt" onclick="copyToClipboard('admin-first-prompt')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Curriculum Specialist Content -->
+    <div class="role-content hidden" data-role="curriculum">
+        <h2 class="text-3xl font-bold mb-6">Curriculum Specialist AI Guide</h2>
+
+        <!-- Platform Recommendations -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Recommended Platform Stack</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Primary Tool: Claude</h4>
+                    <p class="text-gray-700 mb-3">For curriculum alignment and development</p>
+                    <p class="text-sm text-gray-600">Budget: $20/month (Claude Pro)</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Scope and sequence</li>
+                        <li>• Standards alignment</li>
+                        <li>• Assessment design</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Secondary Tool: Gemini</h4>
+                    <p class="text-gray-700 mb-3">For standards research and updates</p>
+                    <p class="text-sm text-gray-600">Budget: $20/month (Advanced)</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Standards research</li>
+                        <li>• Best practices</li>
+                        <li>• Implementation examples</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <p class="text-sm"><strong>Total Monthly Budget:</strong> $40 for comprehensive curriculum support</p>
+            </div>
+        </div>
+
+        <!-- Curriculum Development Workflow -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Curriculum Development Workflow</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                    <div>
+                        <h4 class="font-semibold">Standards Research</h4>
+                        <p class="text-gray-700">Gemini for current standards and alignment resources</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                    <div>
+                        <h4 class="font-semibold">Curriculum Design</h4>
+                        <p class="text-gray-700">Claude for scope and sequence development</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                    <div>
+                        <h4 class="font-semibold">Professional Development</h4>
+                        <p class="text-gray-700">Claude for training design and delivery</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                    <div>
+                        <h4 class="font-semibold">Verification</h4>
+                        <p class="text-gray-700">Perplexity for evidence-based validation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Prompts -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Best First Prompt</h3>
+            <div class="template-box">
+                <p id="curriculum-first-prompt">"Help me align [curriculum element] with [state standards] for [grade range]. I need both the theoretical framework and practical implementation strategies for teachers with varying experience levels."</p>
+            </div>
+            <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="curriculum-first-prompt" onclick="copyToClipboard('curriculum-first-prompt')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Special Education Content -->
+    <div class="role-content hidden" data-role="special-ed">
+        <h2 class="text-3xl font-bold mb-6">Special Education Staff AI Guide</h2>
+
+        <!-- Platform Recommendations -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Recommended Platform Stack</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Primary Tool: Claude</h4>
+                    <p class="text-gray-700 mb-3">For IEP development and planning</p>
+                    <p class="text-sm text-gray-600">Budget: $20/month (Claude Pro)</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• IEP goal development</li>
+                        <li>• Accommodation strategies</li>
+                        <li>• Behavior plans</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-orange-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Secondary Tool: Perplexity</h4>
+                    <p class="text-gray-700 mb-3">For research and compliance</p>
+                    <p class="text-sm text-gray-600">Budget: Free tier or $20/month</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Legal requirements</li>
+                        <li>• Evidence-based interventions</li>
+                        <li>• Best practices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <p class="text-sm"><strong>Total Monthly Budget:</strong> $20-40 depending on research needs</p>
+            </div>
+        </div>
+
+        <!-- IEP Development Workflow -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your IEP Development Workflow</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                    <div>
+                        <h4 class="font-semibold">Research Interventions</h4>
+                        <p class="text-gray-700">Perplexity for evidence-based strategies</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                    <div>
+                        <h4 class="font-semibold">Develop IEP Goals</h4>
+                        <p class="text-gray-700">Claude for measurable, appropriate goals</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                    <div>
+                        <h4 class="font-semibold">Create Accommodations</h4>
+                        <p class="text-gray-700">Claude for individualized strategies</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                    <div>
+                        <h4 class="font-semibold">Progress Reports</h4>
+                        <p class="text-gray-700">ChatGPT for parent communications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Prompts -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Best First Prompt</h3>
+            <div class="template-box">
+                <p id="sped-first-prompt">"I'm working with a [grade] student with [disability category] who needs support in [specific area]. Current performance data shows [brief summary]. Create evidence-based recommendations that can be implemented in inclusive settings."</p>
+            </div>
+            <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="sped-first-prompt" onclick="copyToClipboard('sped-first-prompt')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+
+    <!-- Support Staff Content -->
+    <div class="role-content hidden" data-role="support">
+        <h2 class="text-3xl font-bold mb-6">Support Staff AI Guide</h2>
+
+        <!-- Platform Recommendations -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Recommended Platform Stack</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Primary Tool: ChatGPT</h4>
+                    <p class="text-gray-700 mb-3">For daily communications and tasks</p>
+                    <p class="text-sm text-gray-600">Budget: Free tier or $20/month</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Office communications</li>
+                        <li>• Documentation</li>
+                        <li>• Event planning</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h4 class="font-semibold text-lg mb-2">Secondary Tool: Gemini</h4>
+                    <p class="text-gray-700 mb-3">For research and resource finding</p>
+                    <p class="text-sm text-gray-600">Budget: Free tier</p>
+                    <ul class="mt-2 space-y-1 text-sm">
+                        <li>• Community resources</li>
+                        <li>• Professional development</li>
+                        <li>• Best practices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <p class="text-sm"><strong>Total Monthly Budget:</strong> $0-20 depending on usage</p>
+            </div>
+        </div>
+
+        <!-- Daily Workflow -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Daily AI Workflow</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                    <div>
+                        <h4 class="font-semibold">Communications</h4>
+                        <p class="text-gray-700">ChatGPT for emails, memos, and documentation</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                    <div>
+                        <h4 class="font-semibold">Resource Finding</h4>
+                        <p class="text-gray-700">Gemini for locating community resources</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                    <div>
+                        <h4 class="font-semibold">Process Documentation</h4>
+                        <p class="text-gray-700">ChatGPT for creating procedures and guides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Prompts -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4">Your Best First Prompt</h3>
+            <div class="template-box">
+                <p id="support-first-prompt">"I need help with [specific administrative task] for our school. Please provide a clear, step-by-step approach that considers [any constraints or requirements]. Keep the language professional but accessible."</p>
+            </div>
+            <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="support-first-prompt" onclick="copyToClipboard('support-first-prompt')">
+                Copy Template
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gemini - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation (same as index) -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Gemini</a>
+        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Platform Header -->
+<div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center mr-4">
+                <span class="text-3xl font-bold">G</span>
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold">Gemini</h1>
+                <p class="text-xl mt-2">For Search-Enhanced Tasks & Current Information</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Role Tabs -->
+<div class="bg-white shadow-sm sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap gap-2 py-4">
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="teacher">
+                Classroom Teacher
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="administrator">
+                Administrator
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="curriculum">
+                Curriculum Specialist
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="special-ed">
+                Special Education
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="support">
+                Support Staff
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Tier Comparison -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <div class="flex justify-between items-center mb-4 cursor-pointer" onclick="toggleSection('tier-comparison')">
+            <h2 class="text-2xl font-bold">Tier Comparison</h2>
+            <svg id="tier-comparison-icon" class="w-6 h-6 transform rotate-90 transition-transform" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
+        <div id="tier-comparison" class="hidden grid md:grid-cols-3 gap-4">
+            <div class="border rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Free Tier</h3>
+                    <span class="badge badge-free">Free</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Limited daily queries</li>
+                    <li>✓ Basic Google integration</li>
+                    <li>✓ Good for occasional research</li>
+                    <li>✗ Usage caps during peak times</li>
+                </ul>
+            </div>
+            <div class="border-2 border-blue-500 rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Gemini Advanced</h3>
+                    <span class="badge badge-paid">$20/month</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Unlimited queries</li>
+                    <li>✓ Google Workspace integration</li>
+                    <li>✓ Priority access</li>
+                    <li>✓ Advanced research features</li>
+                </ul>
+            </div>
+            <div class="border rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Enterprise</h3>
+                    <span class="badge badge-enterprise">Custom</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Advanced admin controls</li>
+                    <li>✓ Data residency options</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ Custom integrations</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+            <p class="text-sm"><strong>School District Recommendation:</strong> Advanced tier for research-heavy roles (curriculum specialists, librarians); free tier for occasional current events needs.</p>
+        </div>
+    </div>
+
+    <!-- Role-Based Content -->
+    <!-- Teacher Content -->
+    <div class="role-content hidden" data-role="teacher">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Gemini for Classroom Teachers</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 1: Lead with Search Intent</h3>
+                    <p class="text-gray-700 mb-3">Gemini excels at finding current information relevant to your classroom.</p>
+                    <div class="template-box">
+                        <p id="teacher-gemini-1">"Find recent research about effective online learning strategies for elementary students. Focus on studies from 2024-2025 that address engagement techniques, screen time recommendations, and parent involvement strategies. Include information about hybrid learning models that have shown success in public schools."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="teacher-gemini-1" onclick="copyToClipboard('teacher-gemini-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 2: Current Events Integration</h3>
+                    <p class="text-gray-700 mb-3">Use Gemini to bring real-world connections into your lessons.</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• "What's happening in space exploration that 5th graders would find exciting?"</li>
+                        <li>• "Find age-appropriate current events for teaching about government"</li>
+                        <li>• "Recent scientific discoveries suitable for middle school science"</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 3: Google Workspace Integration</h3>
+                    <p class="text-gray-700 mb-3">Leverage Google tools many schools already use:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Integrate research directly into Google Docs</li>
+                        <li>• Create Google Slides presentations with current data</li>
+                        <li>• Update Google Classroom materials with latest information</li>
+                        <li>• Organize findings in Google Drive folders</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Top Use Cases for Teachers</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Current Events Research</h4>
+                        <p class="text-sm text-gray-700">Find age-appropriate news and events for classroom discussions</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Educational Trends</h4>
+                        <p class="text-sm text-gray-700">Stay updated on latest teaching methods and technologies</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Resource Discovery</h4>
+                        <p class="text-sm text-gray-700">Find free educational resources and virtual field trips</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Standards Updates</h4>
+                        <p class="text-sm text-gray-700">Keep track of changes to state and national standards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Administrator Content -->
+    <div class="role-content hidden" data-role="administrator">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Gemini for Administrators</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Legislative & Policy Updates</h3>
+                    <p class="text-gray-700 mb-3">Stay current on education law and policy changes.</p>
+                    <div class="template-box">
+                        <p id="admin-gemini-1">"What are the latest changes to Title I funding for 2025? Include federal updates, our state's implementation guidelines, and how similar districts are adapting their programs. Focus on implications for schools with over 40% free and reduced lunch populations."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="admin-gemini-1" onclick="copyToClipboard('admin-gemini-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Grant Opportunities</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Current federal and state grant opportunities</li>
+                        <li>• Foundation funding for specific programs</li>
+                        <li>• Technology grants and partnerships</li>
+                        <li>• Professional development funding sources</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Competitive Analysis</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• What neighboring districts are implementing</li>
+                        <li>• State and national best practices</li>
+                        <li>• Innovative programs showing results</li>
+                        <li>• Benchmark comparisons for key metrics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curriculum Specialist Content -->
+    <div class="role-content hidden" data-role="curriculum">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Gemini for Curriculum Specialists</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Standards & Assessment Research</h3>
+                    <div class="template-box">
+                        <p id="curr-gemini-1">"Research the latest updates to Next Generation Science Standards implementation. Find successful middle school science curriculum models from districts with similar demographics. Include information about assessment strategies, lab requirements, and technology integration that align with NGSS three-dimensional learning."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="curr-gemini-1" onclick="copyToClipboard('curr-gemini-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Program Evaluation Research</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Evidence-based curriculum reviews</li>
+                        <li>• Implementation case studies</li>
+                        <li>• Cost-benefit analyses of programs</li>
+                        <li>• Long-term outcome data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Education Content -->
+    <div class="role-content hidden" data-role="special-ed">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Gemini for Special Education Staff</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Legal & Compliance Updates</h3>
+                    <div class="template-box">
+                        <p id="sped-gemini-1">"What are the latest IDEA compliance requirements for 2025? Include recent court cases affecting special education, updated federal guidance on inclusion practices, and state-specific changes to IEP procedures. Focus on implications for elementary schools."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="sped-gemini-1" onclick="copyToClipboard('sped-gemini-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Assistive Technology Updates</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Latest assistive technology tools</li>
+                        <li>• Free and low-cost AT options</li>
+                        <li>• Research on AT effectiveness</li>
+                        <li>• Training resources for staff</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Staff Content -->
+    <div class="role-content hidden" data-role="support">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600">Gemini for Support Staff</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Communication & Outreach</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Research community resources for families</li>
+                        <li>• Find translation and interpretation services</li>
+                        <li>• Locate professional development opportunities</li>
+                        <li>• Discover partnership opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Workspace Integration Tips -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-bold mb-4">Google Workspace Integration</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Direct Integration Benefits</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Research directly into Google Docs</li>
+                    <li>✓ Calendar integration for event planning</li>
+                    <li>✓ Gmail integration for staying current</li>
+                    <li>✓ Drive organization of research findings</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3">School Use Cases</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Update shared curriculum documents</li>
+                    <li>✓ Research for board presentations</li>
+                    <li>✓ Compile grant application materials</li>
+                    <li>✓ Create data-driven reports</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="bg-blue-50 rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Best Practices for Gemini</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div>
+                <h3 class="font-semibold mb-2">Search Strategies ✓</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Specify date ranges</li>
+                    <li>• Request authoritative sources</li>
+                    <li>• Ask for comparisons</li>
+                    <li>• Include location context</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Avoid These ✗</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Overly broad queries</li>
+                    <li>• Accepting first results</li>
+                    <li>• Ignoring source quality</li>
+                    <li>• Missing date verification</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Remember 💡</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Best for current info</li>
+                    <li>• Great Google integration</li>
+                    <li>• Verify critical facts</li>
+                    <li>• Use for trends research</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation (same as index) -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100 bg-purple-50">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100 bg-purple-50">Claude</a>
+        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Platform Header -->
+<div class="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center mr-4">
+                <span class="text-3xl font-bold">C</span>
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold">Claude</h1>
+                <p class="text-xl mt-2">For Complex Reasoning & Development</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Role Tabs -->
+<div class="bg-white shadow-sm sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap gap-2 py-4">
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="teacher">
+                Classroom Teacher
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="administrator">
+                Administrator
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="curriculum">
+                Curriculum Specialist
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="special-ed">
+                Special Education
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-blue-100" data-role="support">
+                Support Staff
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Tier Comparison -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <div class="flex justify-between items-center mb-4 cursor-pointer" onclick="toggleSection('tier-comparison')">
+            <h2 class="text-2xl font-bold">Tier Comparison</h2>
+            <svg id="tier-comparison-icon" class="w-6 h-6 transform rotate-90 transition-transform" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
+        <div id="tier-comparison" class="hidden grid md:grid-cols-3 gap-4">
+            <div class="border rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Free Tier</h3>
+                    <span class="badge badge-free">Free</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ 5 messages per hour</li>
+                    <li>✓ Good for occasional complex tasks</li>
+                    <li>✓ Access to core features</li>
+                    <li>✗ Limited during peak times</li>
+                </ul>
+            </div>
+            <div class="border-2 border-purple-500 rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Claude Pro</h3>
+                    <span class="badge badge-paid">$20/month</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Higher message limits</li>
+                    <li>✓ Priority access</li>
+                    <li>✓ Early access to new features</li>
+                    <li>✓ Better for daily use</li>
+                </ul>
+            </div>
+            <div class="border rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Claude for Work</h3>
+                    <span class="badge badge-enterprise">Enterprise</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Team management</li>
+                    <li>✓ Enhanced security</li>
+                    <li>✓ Admin controls</li>
+                    <li>✓ Custom pricing</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-4 p-4 bg-purple-50 rounded-lg">
+            <p class="text-sm"><strong>School District Recommendation:</strong> Pro tier for curriculum coordinators and special education staff; free tier for occasional users.</p>
+        </div>
+    </div>
+
+    <!-- Role-Based Content -->
+    <!-- Teacher Content -->
+    <div class="role-content hidden" data-role="teacher">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-purple-600">Claude for Classroom Teachers</h2>
+
+            <!-- Step-by-Step Guide -->
+            <div class="space-y-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 1: Start with Context Dump</h3>
+                    <p class="text-gray-700 mb-3">Claude excels when you provide comprehensive background information about your classroom and students.</p>
+                    <div class="template-box">
+                        <p id="teacher-template-1">"I'm developing a 4th-grade science unit on ecosystems. Our district uses Next Generation Science Standards, and I need to align with 4-LS1-1. Here's our current curriculum map [paste content], our available resources [list materials], and the demographics of my students [25 students, 60% English learners, 3 students with IEPs]. I have 6 weeks for this unit and need to incorporate our district's emphasis on hands-on learning."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="teacher-template-1" onclick="copyToClipboard('teacher-template-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 2: Frame the Core Problem</h3>
+                    <p class="text-gray-700 mb-3">Be explicit about your educational challenge and constraints.</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• "I need to differentiate this lesson for 3 reading levels..."</li>
+                        <li>• "How can I assess understanding without traditional tests..."</li>
+                        <li>• "I'm trying to engage reluctant learners in..."</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 3: Request Reasoning Process</h3>
+                    <p class="text-gray-700 mb-3">Use Claude's strength in systematic thinking:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• "Walk me through differentiation strategies for this concept"</li>
+                        <li>• "What are the implications of each assessment approach?"</li>
+                        <li>• "What research supports this instructional method?"</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 4: Iterate with Follow-ups</h3>
+                    <p class="text-gray-700 mb-3">Refine recommendations for your specific context:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• "What if my class size increases to 32 students?"</li>
+                        <li>• "How would this work with limited technology?"</li>
+                        <li>• "What modifications for my ELL students?"</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Step 5: Consolidate into Actionable Output</h3>
+                    <p class="text-gray-700 mb-3">Request practical materials you can use immediately:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• "Create a detailed lesson plan based on our discussion"</li>
+                        <li>• "Generate student handouts with differentiation"</li>
+                        <li>• "Create a parent communication letter"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Top Use Cases for Teachers</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Lesson Planning</h4>
+                        <p class="text-sm text-gray-700">Create comprehensive, standards-aligned lesson plans with built-in differentiation</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Assessment Design</h4>
+                        <p class="text-sm text-gray-700">Develop rubrics, formative assessments, and alternative evaluation methods</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Parent Communication</h4>
+                        <p class="text-sm text-gray-700">Draft thoughtful, personalized parent emails and conference notes</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Differentiation Strategies</h4>
+                        <p class="text-sm text-gray-700">Create multiple versions of materials for diverse learners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Administrator Content -->
+    <div class="role-content hidden" data-role="administrator">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-purple-600">Claude for Administrators</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Policy Analysis & Development</h3>
+                    <p class="text-gray-700 mb-3">Claude excels at analyzing complex policy decisions and their implications.</p>
+                    <div class="template-box">
+                        <p id="admin-template-1">"I need to analyze our district's cell phone policy. Current situation: inconsistent enforcement across schools. Consider: learning benefits vs. distractions, equity issues (not all students have devices), safety concerns, parent communication needs. Compare approaches from similar districts and provide recommendations with implementation timeline."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="admin-template-1" onclick="copyToClipboard('admin-template-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Strategic Planning Support</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Multi-year improvement plans</li>
+                        <li>• Budget impact analysis</li>
+                        <li>• Stakeholder communication strategies</li>
+                        <li>• Change management approaches</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Data Analysis & Interpretation</h3>
+                    <p class="text-gray-700 mb-3">Turn complex data into actionable insights:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Assessment trend analysis</li>
+                        <li>• Demographic impact studies</li>
+                        <li>• Program effectiveness evaluation</li>
+                        <li>• Resource allocation optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Administrator-specific use cases -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Top Use Cases for Administrators</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Board Presentations</h4>
+                        <p class="text-sm text-gray-700">Create comprehensive, data-driven presentations for school board meetings</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Policy Development</h4>
+                        <p class="text-sm text-gray-700">Research and draft evidence-based policies with implementation plans</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Grant Writing</h4>
+                        <p class="text-sm text-gray-700">Develop compelling narratives and budgets for funding applications</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Crisis Management</h4>
+                        <p class="text-sm text-gray-700">Develop communication plans and response strategies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curriculum Specialist Content -->
+    <div class="role-content hidden" data-role="curriculum">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-purple-600">Claude for Curriculum Specialists</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Curriculum Development & Alignment</h3>
+                    <p class="text-gray-700 mb-3">Claude helps create comprehensive, standards-aligned curriculum.</p>
+                    <div class="template-box">
+                        <p id="curriculum-template-1">"Help me develop a scope and sequence for 6th-grade mathematics aligned to Common Core standards. Consider: prerequisite skills from 5th grade, vertical alignment with 7th grade, integration opportunities with science, our district's emphasis on problem-based learning. Include pacing guide for 180-day school year with built-in review and assessment windows."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="curriculum-template-1" onclick="copyToClipboard('curriculum-template-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Professional Development Design</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Create comprehensive PD programs</li>
+                        <li>• Design adult learning experiences</li>
+                        <li>• Develop implementation support materials</li>
+                        <li>• Build assessment tools for PD effectiveness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Education Content -->
+    <div class="role-content hidden" data-role="special-ed">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-purple-600">Claude for Special Education Staff</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">IEP Development</h3>
+                    <p class="text-gray-700 mb-3">Create comprehensive, measurable IEP goals and accommodations.</p>
+                    <div class="template-box">
+                        <p id="sped-template-1">"Create measurable IEP goals for a 3rd-grade student with autism and ADHD. Current performance: reads at 1st-grade level, struggles with task completion and peer interaction. Strengths: strong visual memory, interested in science. Need goals for: reading comprehension, written expression, executive functioning, and social skills. Include data collection methods and progress monitoring strategies."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="sped-template-1" onclick="copyToClipboard('sped-template-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Accommodation Planning</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Develop individualized accommodation strategies</li>
+                        <li>• Create behavior intervention plans</li>
+                        <li>• Design inclusive classroom modifications</li>
+                        <li>• Generate progress monitoring tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Staff Content -->
+    <div class="role-content hidden" data-role="support">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-purple-600">Claude for Support Staff</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Communication & Documentation</h3>
+                    <p class="text-gray-700 mb-3">Claude helps create clear, professional communications and maintain thorough documentation.</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Draft professional emails and letters</li>
+                        <li>• Create meeting agendas and minutes</li>
+                        <li>• Develop process documentation</li>
+                        <li>• Generate reports and summaries</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Integration Tips -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-bold mb-4">Integration Tips for Schools</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Claude Projects for Schools</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Create separate projects for each subject area</li>
+                    <li>✓ Maintain ongoing curriculum conversations</li>
+                    <li>✓ Share project access with department teams</li>
+                    <li>✓ Use projects to maintain context across the school year</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3">File Upload Strategies</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Upload district curriculum guides</li>
+                    <li>✓ Share student work samples for guidance</li>
+                    <li>✓ Upload state standards documents</li>
+                    <li>✓ Include previous lesson plans for improvement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="bg-blue-50 rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Best Practices</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div>
+                <h3 class="font-semibold mb-2">Do's ✓</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Provide comprehensive context</li>
+                    <li>• Be specific about constraints</li>
+                    <li>• Ask for reasoning</li>
+                    <li>• Iterate and refine</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Don'ts ✗</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Include student PII</li>
+                    <li>• Rush complex tasks</li>
+                    <li>• Ignore verification needs</li>
+                    <li>• Use for simple queries</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Remember 💡</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Claude excels at complexity</li>
+                    <li>• Best for multi-step reasoning</li>
+                    <li>• Great for curriculum work</li>
+                    <li>• Ideal for policy analysis</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

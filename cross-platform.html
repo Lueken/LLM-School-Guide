@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Platform Workflows - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-blue-600 font-semibold px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Cross-Platform Workflows</a>
+        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Cross-Platform Workflows</h1>
+        <p class="text-xl">Leverage multiple AI tools for comprehensive educational solutions</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Platform Selection Matrix -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Platform Selection Matrix</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Complex Educational Decisions → Claude</h3>
+                <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• Curriculum scope and sequence development</li>
+                    <li>• IEP goal development and accommodation planning</li>
+                    <li>• Multi-year strategic planning</li>
+                    <li>• Budget analysis with multiple variables</li>
+                    <li>• Staffing and scheduling optimization</li>
+                </ul>
+            </div>
+
+            <div class="bg-blue-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Need Current Information → Gemini or Perplexity</h3>
+                <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• Latest education research and trends</li>
+                    <li>• Current legislative changes affecting schools</li>
+                    <li>• Recent technology tool comparisons</li>
+                    <li>• Grant opportunities and deadlines</li>
+                    <li>• Current best practices from other districts</li>
+                </ul>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Quick Daily Tasks → ChatGPT</h3>
+                <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• Parent communication emails</li>
+                    <li>• Basic lesson plan outlines</li>
+                    <li>• Meeting agendas and minutes</li>
+                    <li>• Simple data formatting</li>
+                    <li>• Newsletter content and announcements</li>
+                </ul>
+            </div>
+
+            <div class="bg-orange-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-3">Need Verified Sources → Perplexity</h3>
+                <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• Policy research and legal compliance</li>
+                    <li>• Academic research for program decisions</li>
+                    <li>• Evaluation of vendor claims</li>
+                    <li>• Professional development program vetting</li>
+                    <li>• Special education legal requirements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multi-Platform Research Project -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Multi-Platform Research Project Example</h2>
+        <p class="text-gray-700 mb-4">PROJECT: New Math Curriculum Implementation for Grades 3-5</p>
+
+        <div class="space-y-4">
+            <!-- Phase 1 -->
+            <div class="border-l-4 border-orange-500 pl-4">
+                <div class="flex items-center mb-2">
+                    <span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-3">Phase 1</span>
+                    <h3 class="text-lg font-semibold">Background Research (Perplexity)</h3>
+                </div>
+                <div class="template-box">
+                    <p id="phase1-template">"Research current best practices for elementary mathematics curriculum in K-12 education. Focus on:
+                        - Peer-reviewed studies from 2022-2025
+                        - Implementation examples from similar districts
+                        - Outcome data and effectiveness measures
+                        - Cost considerations and resource requirements"</p>
+                </div>
+                <button class="copy-button mt-2 bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700" data-target="phase1-template" onclick="copyToClipboard('phase1-template')">
+                    Copy Template
+                </button>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="border-l-4 border-purple-500 pl-4">
+                <div class="flex items-center mb-2">
+                    <span class="bg-purple-600 text-white rounded-full px-3 py-1 mr-3">Phase 2</span>
+                    <h3 class="text-lg font-semibold">Strategic Analysis (Claude)</h3>
+                </div>
+                <div class="template-box">
+                    <p id="phase2-template">"Based on this research [paste Perplexity results], analyze how we could implement a new math curriculum in our district. Consider:
+                        - Our specific demographics and needs
+                        - Budget constraints of $50,000
+                        - Current staff capacity and expertise
+                        - Potential barriers and solutions
+                        - Timeline for implementation"</p>
+                </div>
+                <button class="copy-button mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" data-target="phase2-template" onclick="copyToClipboard('phase2-template')">
+                    Copy Template
+                </button>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="border-l-4 border-blue-500 pl-4">
+                <div class="flex items-center mb-2">
+                    <span class="bg-blue-600 text-white rounded-full px-3 py-1 mr-3">Phase 3</span>
+                    <h3 class="text-lg font-semibold">Resource Identification (Gemini)</h3>
+                </div>
+                <div class="template-box">
+                    <p id="phase3-template">"Find specific resources, training programs, and materials to support implementing [CLAUDE'S RECOMMENDATIONS]. Include:
+                        - Professional development opportunities
+                        - Curriculum materials and tools
+                        - Technology requirements and costs
+                        - Vendor options and comparisons"</p>
+                </div>
+                <button class="copy-button mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-target="phase3-template" onclick="copyToClipboard('phase3-template')">
+                    Copy Template
+                </button>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="border-l-4 border-green-500 pl-4">
+                <div class="flex items-center mb-2">
+                    <span class="bg-green-600 text-white rounded-full px-3 py-1 mr-3">Phase 4</span>
+                    <h3 class="text-lg font-semibold">Communication Materials (ChatGPT)</h3>
+                </div>
+                <div class="template-box">
+                    <p id="phase4-template">"Create stakeholder communication materials for this project:
+                        - Executive summary for school board (1 page)
+                        - Staff announcement and FAQ (2 pages)
+                        - Parent information letter (1 page)
+                        - Implementation timeline graphic"</p>
+                </div>
+                <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="phase4-template" onclick="copyToClipboard('phase4-template')">
+                    Copy Template
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Transfer Template -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Context Transfer Template</h2>
+        <p class="text-gray-700 mb-4">Use this template when moving between platforms to maintain continuity:</p>
+
+        <div class="template-box">
+                <pre id="context-transfer-template">PREVIOUS ANALYSIS with [Platform Name]:
+Research findings:
+• [Key finding 1]
+• [Key finding 2]
+• [Key finding 3]
+
+DECISIONS MADE:
+• [Decision 1]
+• [Decision 2]
+• [Decision 3]
+
+OPEN QUESTIONS:
+• [Question 1]
+• [Question 2]
+• [Question 3]
+
+NOW I NEED [New Platform] TO:
+[Specific request based on previous work]
+Please consider the context above and [specific instruction].</pre>
+        </div>
+        <button class="copy-button mt-2 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700" data-target="context-transfer-template" onclick="copyToClipboard('context-transfer-template')">
+            Copy Template
+        </button>
+    </div>
+
+    <!-- Team Coordination Protocol -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Team Coordination & Handoff Protocols</h2>
+
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-3">Handoff Template</h3>
+            <div class="template-box">
+                    <pre id="handoff-template">PROJECT: [Name and scope]
+CURRENT PHASE: [Research/Analysis/Implementation]
+COMPLETED: [What's been done and with which platform]
+NEXT STEPS: [What needs to happen next]
+HANDOFF TO: [Who and which platform they should use]
+KEY CONTEXT: [Essential information for next person]
+DEADLINE: [When this phase needs completion]</pre>
+            </div>
+            <button class="copy-button mt-2 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700" data-target="handoff-template" onclick="copyToClipboard('handoff-template')">
+                Copy Template
+            </button>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="text-xl font-semibold mb-3">Example Team Project</h3>
+            <p class="text-gray-700 mb-3"><strong>Project Lead:</strong> "I'm starting research on new math curriculum for grades 3-5. I'll use Perplexity for initial research, then move to Claude for analysis. Sarah, you'll take the Claude output and use Gemini to find implementation examples. Tom, you'll use ChatGPT to draft parent communications based on our decisions."</p>
+
+            <div class="grid md:grid-cols-3 gap-4 mt-4">
+                <div>
+                    <h4 class="font-semibold mb-1">Person 1: Research Lead</h4>
+                    <p class="text-sm text-gray-600">Platform: Perplexity</p>
+                    <p class="text-sm text-gray-600">Task: Gather evidence</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-1">Person 2: Analyst</h4>
+                    <p class="text-sm text-gray-600">Platform: Claude</p>
+                    <p class="text-sm text-gray-600">Task: Strategic planning</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-1">Person 3: Communicator</h4>
+                    <p class="text-sm text-gray-600">Platform: ChatGPT</p>
+                    <p class="text-sm text-gray-600">Task: Create materials</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workflow Examples by Task -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Common Workflow Examples</h2>
+
+        <div class="space-y-6">
+            <!-- Grant Application -->
+            <div class="border rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-2">Grant Application Workflow</h3>
+                <div class="grid md:grid-cols-4 gap-2 text-sm">
+                    <div class="bg-blue-100 p-2 rounded">
+                        <strong>1. Gemini:</strong> Find grant opportunities
+                    </div>
+                    <div class="bg-orange-100 p-2 rounded">
+                        <strong>2. Perplexity:</strong> Research requirements
+                    </div>
+                    <div class="bg-purple-100 p-2 rounded">
+                        <strong>3. Claude:</strong> Develop narrative
+                    </div>
+                    <div class="bg-green-100 p-2 rounded">
+                        <strong>4. ChatGPT:</strong> Format submission
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Development -->
+            <div class="border rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-2">Policy Development Workflow</h3>
+                <div class="grid md:grid-cols-4 gap-2 text-sm">
+                    <div class="bg-orange-100 p-2 rounded">
+                        <strong>1. Perplexity:</strong> Legal research
+                    </div>
+                    <div class="bg-blue-100 p-2 rounded">
+                        <strong>2. Gemini:</strong> Find examples
+                    </div>
+                    <div class="bg-purple-100 p-2 rounded">
+                        <strong>3. Claude:</strong> Draft policy
+                    </div>
+                    <div class="bg-green-100 p-2 rounded">
+                        <strong>4. ChatGPT:</strong> Create FAQ
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Teacher Onboarding -->
+            <div class="border rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-2">New Teacher Onboarding</h3>
+                <div class="grid md:grid-cols-4 gap-2 text-sm">
+                    <div class="bg-green-100 p-2 rounded">
+                        <strong>1. ChatGPT:</strong> Welcome materials
+                    </div>
+                    <div class="bg-purple-100 p-2 rounded">
+                        <strong>2. Claude:</strong> Training plan
+                    </div>
+                    <div class="bg-blue-100 p-2 rounded">
+                        <strong>3. Gemini:</strong> Resource lists
+                    </div>
+                    <div class="bg-orange-100 p-2 rounded">
+                        <strong>4. Perplexity:</strong> Best practices
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quality Assurance Checkpoints -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-6">Quality Assurance Checkpoints</h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-green-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Individual Review</h3>
+                <p class="text-sm font-semibold mb-2">Every AI Output:</p>
+                <ul class="text-sm space-y-1">
+                    <li>□ Factual accuracy verified</li>
+                    <li>□ Alignment with district policies</li>
+                    <li>□ Appropriate tone and language</li>
+                    <li>□ No confidential information</li>
+                    <li>□ Clear attribution if sharing</li>
+                </ul>
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Peer Review</h3>
+                <p class="text-sm font-semibold mb-2">Important Outputs:</p>
+                <ul class="text-sm space-y-1">
+                    <li>□ Colleague accuracy check</li>
+                    <li>□ Department head approval</li>
+                    <li>□ Legal/HR review if needed</li>
+                    <li>□ Special education review</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 rounded-lg p-4">
+                <h3 class="font-semibold mb-2">Supervisory Review</h3>
+                <p class="text-sm font-semibold mb-2">Public-Facing Content:</p>
+                <ul class="text-sm space-y-1">
+                    <li>□ Principal approval</li>
+                    <li>□ Superintendent approval</li>
+                    <li>□ Communications review</li>
+                    <li>□ Legal counsel if needed</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Reference - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-blue-600 font-semibold px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100 bg-blue-50">Quick Reference</a>
+        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-gray-600 to-blue-600 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Quick Reference Guide</h1>
+        <p class="text-xl">Essential decision matrices and at-a-glance information</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Platform Comparison Matrix -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Platform Comparison Matrix</h2>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Platform</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Best For</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Free Tier</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Paid Tier</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">School Use</th>
+                </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                    <td class="px-4 py-4 font-semibold text-purple-600">Claude</td>
+                    <td class="px-4 py-4 text-sm">Complex planning, curriculum</td>
+                    <td class="px-4 py-4 text-sm">5 messages/hour</td>
+                    <td class="px-4 py-4 text-sm">$20/month</td>
+                    <td class="px-4 py-4 text-sm">Lesson planning, IEP development</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="px-4 py-4 font-semibold text-blue-600">Gemini</td>
+                    <td class="px-4 py-4 text-sm">Research, current events</td>
+                    <td class="px-4 py-4 text-sm">Limited queries</td>
+                    <td class="px-4 py-4 text-sm">$20/month</td>
+                    <td class="px-4 py-4 text-sm">News updates, research projects</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-4 font-semibold text-green-600">ChatGPT</td>
+                    <td class="px-4 py-4 text-sm">Quick tasks, brainstorming</td>
+                    <td class="px-4 py-4 text-sm">Basic access</td>
+                    <td class="px-4 py-4 text-sm">$20/month</td>
+                    <td class="px-4 py-4 text-sm">Daily communications</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="px-4 py-4 font-semibold text-orange-600">Perplexity</td>
+                    <td class="px-4 py-4 text-sm">Fact-checking, citations</td>
+                    <td class="px-4 py-4 text-sm">5 searches/day</td>
+                    <td class="px-4 py-4 text-sm">$20/month</td>
+                    <td class="px-4 py-4 text-sm">Academic research, policy</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Tier Decision Matrix -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Tier Decision Matrix</h2>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Usage Pattern</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Recommendation</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Monthly Cost</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">ROI Indicators</th>
+                </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                    <td class="px-4 py-4 text-sm">1-5 hours/week</td>
+                    <td class="px-4 py-4 text-sm">Free tiers</td>
+                    <td class="px-4 py-4 text-sm">$0</td>
+                    <td class="px-4 py-4 text-sm">Time savings, task completion</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="px-4 py-4 text-sm">5-15 hours/week</td>
+                    <td class="px-4 py-4 text-sm">1-2 paid platforms</td>
+                    <td class="px-4 py-4 text-sm">$20-40</td>
+                    <td class="px-4 py-4 text-sm">Significant productivity gains</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-4 text-sm">15+ hours/week</td>
+                    <td class="px-4 py-4 text-sm">Multiple paid platforms</td>
+                    <td class="px-4 py-4 text-sm">$60-80</td>
+                    <td class="px-4 py-4 text-sm">Essential to job performance</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="px-4 py-4 text-sm">Team coordination</td>
+                    <td class="px-4 py-4 text-sm">Enterprise solutions</td>
+                    <td class="px-4 py-4 text-sm">$100+</td>
+                    <td class="px-4 py-4 text-sm">Department-wide efficiency</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Best First Prompts by Role -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Best First Prompts by Role</h2>
+
+        <div class="space-y-4">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold mb-2">Classroom Teacher</h3>
+                <p class="text-sm text-gray-700">"I teach [grade level] [subject] and need help with [specific task]. My students include [brief demographics]. Please provide practical, immediately usable suggestions that consider limited classroom resources."</p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold mb-2">Administrator</h3>
+                <p class="text-sm text-gray-700">"I need to analyze [situation/decision] for our [school level]. Consider our context: [student population size and demographics]. What approach would you recommend and what implementation challenges should I anticipate?"</p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold mb-2">Curriculum Specialist</h3>
+                <p class="text-sm text-gray-700">"Help me align [curriculum element] with [state standards] for [grade range]. I need both the theoretical framework and practical implementation strategies for teachers with varying experience levels."</p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold mb-2">Special Education Staff</h3>
+                <p class="text-sm text-gray-700">"I'm working with a [grade] student with [disability category] who needs support in [specific area]. Current performance data shows [brief summary]. Create evidence-based recommendations that can be implemented in inclusive settings."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Protocols -->
+    <div class="bg-red-50 rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-red-800">Emergency Protocols</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="font-semibold mb-3">Platform Downtime Alternatives</h3>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• <strong>Primary down:</strong> Switch to secondary platform from role recommendations</li>
+                    <li>• <strong>All AI down:</strong> Use pre-created templates and human backup</li>
+                    <li>• <strong>Account locked:</strong> Contact IT coordinator immediately</li>
+                    <li>• <strong>Emergency access:</strong> Use shared emergency account if available</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3">Data Privacy Incident Response</h3>
+                <ol class="space-y-2 text-sm text-gray-700">
+                    <li>1. Stop using the platform immediately</li>
+                    <li>2. Document what information was shared</li>
+                    <li>3. Contact IT coordinator within 2 hours</li>
+                    <li>4. Complete incident report form</li>
+                    <li>5. Attend additional privacy training</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cost-Benefit Quick Guide -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Cost-Benefit Analysis by District Size</h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-blue-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-2">Small District</h3>
+                <p class="text-sm text-gray-600 mb-2">Under 1,000 students</p>
+                <ul class="space-y-1 text-sm">
+                    <li>• Start with free tiers</li>
+                    <li>• 2-3 paid subscriptions</li>
+                    <li>• Focus on administrators</li>
+                    <li>• <strong>Cost: $40-60/month</strong></li>
+                </ul>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-2">Medium District</h3>
+                <p class="text-sm text-gray-600 mb-2">1,000-5,000 students</p>
+                <ul class="space-y-1 text-sm">
+                    <li>• Mix free and paid</li>
+                    <li>• Department heads get paid</li>
+                    <li>• Pilot programs first</li>
+                    <li>• <strong>Cost: $200-400/month</strong></li>
+                </ul>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-4">
+                <h3 class="font-semibold text-lg mb-2">Large District</h3>
+                <p class="text-sm text-gray-600 mb-2">Over 5,000 students</p>
+                <ul class="space-y-1 text-sm">
+                    <li>• Enterprise solutions</li>
+                    <li>• Department licensing</li>
+                    <li>• Comprehensive training</li>
+                    <li>• <strong>Cost: $500-1,500/month</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Platform Selection Flowchart -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Platform Selection Flowchart</h2>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <span class="bg-blue-600 text-white rounded-full px-3 py-1 mr-3">Start</span>
+                    <p>What type of task do you need to complete?</p>
+                </div>
+
+                <div class="ml-12 space-y-3">
+                    <div class="flex items-center">
+                        <span class="text-purple-600 font-semibold mr-2">→</span>
+                        <p><strong>Complex analysis/planning?</strong> → Use Claude</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-blue-600 font-semibold mr-2">→</span>
+                        <p><strong>Need current information?</strong> → Use Gemini</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-600 font-semibold mr-2">→</span>
+                        <p><strong>Quick task/communication?</strong> → Use ChatGPT</p>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-orange-600 font-semibold mr-2">→</span>
+                        <p><strong>Need citations/verification?</strong> → Use Perplexity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="font-semibold mb-3">Internal Support</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>• <strong>IT Coordinator:</strong> Account access, technical issues</li>
+                    <li>• <strong>Professional Development:</strong> Training needs, skill development</li>
+                    <li>• <strong>Legal/Compliance:</strong> Policy questions, privacy concerns</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3">Platform Support</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>• <strong>Claude:</strong> support@anthropic.com</li>
+                    <li>• <strong>ChatGPT:</strong> help.openai.com</li>
+                    <li>• <strong>Gemini:</strong> support.google.com/ai</li>
+                    <li>• <strong>Perplexity:</strong> support@perplexity.ai</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

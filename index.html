@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Platform Guide for Public School Districts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <span class="text-xl font-bold text-gray-800">AI Guide for Schools</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100">ChatGPT</a>
+        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">AI Platform Guide for Public School Districts</h1>
+        <p class="text-xl mb-8">Optimize AI tools across Claude, Gemini, ChatGPT, and Perplexity for educational professionals</p>
+
+        <!-- Quick Role Selector -->
+        <div class="bg-white/10 backdrop-blur rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">I am a...</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button onclick="setRoleAndNavigate('teacher')" class="role-button bg-white text-blue-600 py-3 px-4 rounded-lg hover:bg-blue-50 transition">
+                    Classroom Teacher
+                </button>
+                <button onclick="setRoleAndNavigate('administrator')" class="role-button bg-white text-blue-600 py-3 px-4 rounded-lg hover:bg-blue-50 transition">
+                    Administrator
+                </button>
+                <button onclick="setRoleAndNavigate('curriculum')" class="role-button bg-white text-blue-600 py-3 px-4 rounded-lg hover:bg-blue-50 transition">
+                    Curriculum Specialist
+                </button>
+                <button onclick="setRoleAndNavigate('special-ed')" class="role-button bg-white text-blue-600 py-3 px-4 rounded-lg hover:bg-blue-50 transition">
+                    Special Education
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Platform Overview Cards -->
+<div class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Choose Your Platform</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Claude Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-purple-600">C</span>
+                </div>
+                <h3 class="text-xl font-semibold ml-3">Claude</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Complex planning, curriculum development, IEP development</p>
+            <div class="space-y-2 mb-4">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Free Tier:</span>
+                    <span>5 messages/hour</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Paid Tier:</span>
+                    <span class="font-semibold">$20/month</span>
+                </div>
+            </div>
+            <a href="claude.html" class="block w-full bg-purple-600 text-white text-center py-2 rounded-lg hover:bg-purple-700 transition">
+                Learn More →
+            </a>
+        </div>
+
+        <!-- Gemini Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-blue-600">G</span>
+                </div>
+                <h3 class="text-xl font-semibold ml-3">Gemini</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Research, current events, Google integration</p>
+            <div class="space-y-2 mb-4">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Free Tier:</span>
+                    <span>Limited queries</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Paid Tier:</span>
+                    <span class="font-semibold">$20/month</span>
+                </div>
+            </div>
+            <a href="gemini.html" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition">
+                Learn More →
+            </a>
+        </div>
+
+        <!-- ChatGPT Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-green-600">C</span>
+                </div>
+                <h3 class="text-xl font-semibold ml-3">ChatGPT</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Quick tasks, brainstorming, daily communications</p>
+            <div class="space-y-2 mb-4">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Free Tier:</span>
+                    <span>Basic access</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Paid Tier:</span>
+                    <span class="font-semibold">$20/month</span>
+                </div>
+            </div>
+            <a href="chatgpt.html" class="block w-full bg-green-600 text-white text-center py-2 rounded-lg hover:bg-green-700 transition">
+                Learn More →
+            </a>
+        </div>
+
+        <!-- Perplexity Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-orange-600">P</span>
+                </div>
+                <h3 class="text-xl font-semibold ml-3">Perplexity</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Fact-checking, cited research, policy verification</p>
+            <div class="space-y-2 mb-4">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Free Tier:</span>
+                    <span>5 searches/day</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">Paid Tier:</span>
+                    <span class="font-semibold">$20/month</span>
+                </div>
+            </div>
+            <a href="perplexity.html" class="block w-full bg-orange-600 text-white text-center py-2 rounded-lg hover:bg-orange-700 transition">
+                Learn More →
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Start Section -->
+<div class="bg-gray-100 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Quick Start by District Size</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">Small District</h3>
+                <p class="text-gray-600 mb-2">Under 1,000 students</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• Start with free tiers for most staff</li>
+                    <li>• 2-3 paid subscriptions for administrators</li>
+                    <li>• Estimated cost: $40-60/month</li>
+                </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">Medium District</h3>
+                <p class="text-gray-600 mb-2">1,000-5,000 students</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• Mix of free and paid accounts</li>
+                    <li>• Department heads get paid access</li>
+                    <li>• Estimated cost: $200-400/month</li>
+                </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">Large District</h3>
+                <p class="text-gray-600 mb-2">Over 5,000 students</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• Consider enterprise solutions</li>
+                    <li>• Department-based licensing</li>
+                    <li>• Estimated cost: $500-1,500/month</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

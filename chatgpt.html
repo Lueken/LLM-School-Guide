@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT - AI Platform Guide for Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+<!-- Navigation (same as index) -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800">AI Guide for Schools</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">Home</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Platforms ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+                        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+                        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100 bg-green-50">ChatGPT</a>
+                        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+                    </div>
+                </div>
+                <a href="by-role.html" class="text-gray-700 hover:text-blue-600 px-3 py-2">By Role</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Advanced ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="prompt-engineering.html" class="block px-4 py-2 hover:bg-gray-100">Prompt Engineering</a>
+                        <a href="team-implementation.html" class="block px-4 py-2 hover:bg-gray-100">Team Implementation</a>
+                        <a href="cross-platform.html" class="block px-4 py-2 hover:bg-gray-100">Cross-Platform Workflows</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-blue-600 px-3 py-2">Resources ▼</button>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded-md">
+                        <a href="quick-reference.html" class="block px-4 py-2 hover:bg-gray-100">Quick Reference</a>
+                        <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+                        <a href="templates.html" class="block px-4 py-2 hover:bg-gray-100">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                    <svg class="h-6 w-6"  stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="claude.html" class="block px-4 py-2 hover:bg-gray-100">Claude</a>
+        <a href="gemini.html" class="block px-4 py-2 hover:bg-gray-100">Gemini</a>
+        <a href="chatgpt.html" class="block px-4 py-2 hover:bg-gray-100 bg-green-50">ChatGPT</a>
+        <a href="perplexity.html" class="block px-4 py-2 hover:bg-gray-100">Perplexity</a>
+        <a href="by-role.html" class="block px-4 py-2 hover:bg-gray-100">By Role</a>
+<!--        <a href="resources.html" class="block px-4 py-2 hover:bg-gray-100">Resources</a>-->
+    </div>
+</nav>
+
+<!-- Platform Header -->
+<div class="bg-gradient-to-r from-green-600 to-green-800 text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center mr-4">
+                <span class="text-3xl font-bold">C</span>
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold">ChatGPT</h1>
+                <p class="text-xl mt-2">For Quick Tasks & Daily Communications</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Role Tabs -->
+<div class="bg-white shadow-sm sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap gap-2 py-4">
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100" data-role="teacher">
+                Classroom Teacher
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100" data-role="administrator">
+                Administrator
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100" data-role="curriculum">
+                Curriculum Specialist
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100" data-role="special-ed">
+                Special Education
+            </button>
+            <button class="role-tab px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100" data-role="support">
+                Support Staff
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Tier Comparison -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <div class="flex justify-between items-center mb-4 cursor-pointer" onclick="toggleSection('tier-comparison')">
+            <h2 class="text-2xl font-bold">Tier Comparison</h2>
+            <svg id="tier-comparison-icon" class="w-6 h-6 transform rotate-90 transition-transform"  stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
+        <div id="tier-comparison" class="hidden grid md:grid-cols-3 gap-4">
+            <div class="border rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Free Tier</h3>
+                    <span class="badge badge-free">Free</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Basic access</li>
+                    <li>✓ Good for quick tasks</li>
+                    <li>✓ Simple brainstorming</li>
+                    <li>✗ Limited during peak times</li>
+                    <li>✗ May have usage caps</li>
+                </ul>
+            </div>
+            <div class="border-2 border-green-500 rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">ChatGPT Plus</h3>
+                    <span class="badge badge-paid">$20/month</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ GPT-4 access</li>
+                    <li>✓ Custom instructions</li>
+                    <li>✓ Plugin ecosystem</li>
+                    <li>✓ Priority access</li>
+                    <li>✓ Advanced features</li>
+                </ul>
+            </div>
+            <div class="border rounded-lg p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Team/Enterprise</h3>
+                    <span class="badge badge-enterprise">$30+/user</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li>✓ Shared workspace</li>
+                    <li>✓ Enhanced data controls</li>
+                    <li>✓ Admin management</li>
+                    <li>✓ Higher usage limits</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-4 p-4 bg-green-50 rounded-lg">
+            <p class="text-sm"><strong>School District Recommendation:</strong> Plus tier for staff who use AI daily for communications; free tier for occasional users.</p>
+        </div>
+    </div>
+
+    <!-- Role-Based Content -->
+    <!-- Teacher Content -->
+    <div class="role-content hidden" data-role="teacher">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-green-600">ChatGPT for Classroom Teachers</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Free Tier - Quick Daily Tasks</h3>
+                    <p class="text-gray-700 mb-3">Perfect for everyday classroom needs without complex requirements.</p>
+                    <div class="template-box">
+                        <p id="teacher-chatgpt-1">"Write a parent email explaining why homework will be reduced this week due to state testing. Keep it friendly, professional, and under 150 words. Include appreciation for their support and a reminder about testing snacks."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="teacher-chatgpt-1" onclick="copyToClipboard('teacher-chatgpt-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Quick Classroom Management</h3>
+                    <p class="text-gray-700 mb-3">Get immediate help with daily classroom situations:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• "List 10 brain break activities for middle school students"</li>
+                        <li>• "Create a simple behavior chart for 2nd graders"</li>
+                        <li>• "Draft a substitute teacher note for tomorrow's math lesson"</li>
+                        <li>• "Generate exit ticket questions for today's science lesson"</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">ChatGPT Plus - Enhanced Features</h3>
+                    <p class="text-gray-700 mb-3">Set up custom instructions for consistent outputs:</p>
+                    <div class="template-box">
+                        <p id="teacher-chatgpt-2">Custom Instructions:
+                            "I am a 4th grade teacher in a public school. When I ask for lesson plans, always include Common Core standards alignment and differentiation strategies. Keep language professional but accessible to parents. Consider diverse learning needs and limited classroom resources."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="teacher-chatgpt-2" onclick="copyToClipboard('teacher-chatgpt-2')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Useful Plugins for Teachers</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• <strong>Wolfram:</strong> Advanced math problem solving</li>
+                        <li>• <strong>ScholarAI:</strong> Academic research access</li>
+                        <li>• <strong>Link Reader:</strong> Analyze educational websites</li>
+                        <li>• <strong>Diagram It:</strong> Create visual aids and concept maps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Top Use Cases for Teachers</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Parent Communications</h4>
+                        <p class="text-sm text-gray-700">Quick emails, newsletters, and conference notes</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Assignment Creation</h4>
+                        <p class="text-sm text-gray-700">Worksheets, discussion questions, and rubrics</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Brainstorming</h4>
+                        <p class="text-sm text-gray-700">Activity ideas, project themes, and classroom decor</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Student Feedback</h4>
+                        <p class="text-sm text-gray-700">Report card comments and assignment feedback</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Administrator Content -->
+    <div class="role-content hidden" data-role="administrator">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-green-600">ChatGPT for Administrators</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Quick Communication Tasks</h3>
+                    <div class="template-box">
+                        <p id="admin-chatgpt-1">"Draft a staff email about the upcoming professional development day. Include: date (March 15), theme (differentiated instruction), keynote speaker arrival at 8:30 AM, lunch provided, dismissal at 3:30 PM. Keep tone encouraging and professional."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="admin-chatgpt-1" onclick="copyToClipboard('admin-chatgpt-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Meeting Management</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Create meeting agendas quickly</li>
+                        <li>• Generate discussion prompts for staff meetings</li>
+                        <li>• Draft follow-up action items</li>
+                        <li>• Create meeting minutes templates</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Community Relations</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Newsletter content creation</li>
+                        <li>• Social media posts for school events</li>
+                        <li>• Press release drafts</li>
+                        <li>• Parent survey questions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curriculum Specialist Content -->
+    <div class="role-content hidden" data-role="curriculum">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-green-600">ChatGPT for Curriculum Specialists</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Quick Curriculum Tasks</h3>
+                    <div class="template-box">
+                        <p id="curr-chatgpt-1">"Create a simple pacing guide for 3rd grade reading, first quarter (9 weeks). Include: phonics review (2 weeks), main idea/details (3 weeks), character analysis (2 weeks), narrative writing (2 weeks). Add assessment checkpoints."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="curr-chatgpt-1" onclick="copyToClipboard('curr-chatgpt-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Professional Development Support</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Quick training handouts</li>
+                        <li>• Icebreaker activities for PD sessions</li>
+                        <li>• Reflection prompts for teachers</li>
+                        <li>• Implementation checklists</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Education Content -->
+    <div class="role-content hidden" data-role="special-ed">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-green-600">ChatGPT for Special Education Staff</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Quick IEP Support</h3>
+                    <div class="template-box">
+                        <p id="sped-chatgpt-1">"Write a progress report update for parents. Student has met 2 of 3 reading goals, showing improvement in sight words but still working on comprehension. Include positive tone, specific examples, and next steps. Keep under 200 words."</p>
+                    </div>
+                    <button class="copy-button mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" data-target="sped-chatgpt-1" onclick="copyToClipboard('sped-chatgpt-1')">
+                        Copy Template
+                    </button>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Daily Support Tasks</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Visual schedule creation</li>
+                        <li>• Social stories for specific situations</li>
+                        <li>• Behavior tracking sheets</li>
+                        <li>• Parent communication logs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Staff Content -->
+    <div class="role-content hidden" data-role="support">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-green-600">ChatGPT for Support Staff</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="text-xl font-semibold mb-3">Administrative Support</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Office communications and memos</li>
+                        <li>• Event planning checklists</li>
+                        <li>• Visitor information packets</li>
+                        <li>• Supply order organization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tips for Free vs Paid -->
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-bold mb-4">Maximizing Free vs Paid Tiers</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Free Tier Strategies</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Bundle related requests in one prompt</li>
+                    <li>✓ Use during off-peak hours</li>
+                    <li>✓ Keep prompts concise and clear</li>
+                    <li>✓ Save useful responses immediately</li>
+                    <li>✓ Have backup plan if limits reached</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Plus Tier Benefits</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Custom instructions save time</li>
+                    <li>✓ Plugins extend functionality</li>
+                    <li>✓ GPT-4 for better quality</li>
+                    <li>✓ No waiting during peak times</li>
+                    <li>✓ Worth it if using daily</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="bg-green-50 rounded-lg p-6">
+        <h2 class="text-2xl font-bold mb-4">Best Practices for ChatGPT</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div>
+                <h3 class="font-semibold mb-2">Effective Prompting ✓</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Front-load key info</li>
+                    <li>• Specify format needed</li>
+                    <li>• Include word counts</li>
+                    <li>• Give clear examples</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Common Pitfalls ✗</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Overly complex requests</li>
+                    <li>• Missing context</li>
+                    <li>• Vague instructions</li>
+                    <li>• Not saving outputs</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Remember 💡</h3>
+                <ul class="text-sm space-y-1 text-gray-700">
+                    <li>• Best for quick tasks</li>
+                    <li>• Great for brainstorming</li>
+                    <li>• Perfect for emails</li>
+                    <li>• Use for daily needs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2025 AI Platform Guide for Public School Districts</p>
+        <p class="mt-2 text-sm text-gray-400">Empowering educators with AI tools</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

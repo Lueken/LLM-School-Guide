@@ -1,0 +1,86 @@
+# IDE - WebStorm/IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE - Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# OS - macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# OS - Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# OS - Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*.bak
+.cache
+
+# Node (in case you add build tools later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.npm
+
+# Build output (if you add build tools)
+dist/
+build/
+out/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor backup files
+
+*.backup
+
+# Compressed files (usually not source)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Optional: Exclude minified files if you're generating them
+# *.min.css
+# *.min.js
